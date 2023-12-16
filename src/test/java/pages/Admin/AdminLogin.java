@@ -24,4 +24,6 @@ public class AdminLogin {
     public WebElement forgotPasswordBaslik;
     @FindBy (xpath = "//h6[@class='page-title']")
     public WebElement adminDashoardyazisi;
+
+    ////
 }
