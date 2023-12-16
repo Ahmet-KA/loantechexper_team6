@@ -67,7 +67,7 @@ public class AdminDepositsPage {
     public List<WebElement> successdepositList;// is not empty seklinde kontrol yapabilirim
 
 
-
+  ///////////////////////////////////////////////////////////////////
 
 
 
