@@ -8,9 +8,9 @@ import utilities.Driver;
 public class AdminLoanPage {
 
 
-    public AdminLoanPage(){
+    public AdminLoanPage() {
 
-        PageFactory.initElements(Driver.getDriver(),this);
+        PageFactory.initElements(Driver.getDriver(), this);
     }
 
     // LOANS MENU ELEMENTLERİ  -Admin----Murat
@@ -28,10 +28,7 @@ public class AdminLoanPage {
     public WebElement loansMenuRejectedLoansElement;
     @FindBy(xpath = "//span[text()=\"All Loans\"]")
     public WebElement loansMenuAllLoansElement;
-    public String expectedAllUrl = "https://qa.loantechexper.com/admin/loan/all";
-    public String expectedRejectedUrl = "https://qa.loantechexper.com/admin/loan/rejected";
-    public String expectedPaidUrl = "https://qa.loantechexper.com/admin/loan/paid";
-    public String expectedDuoUrl = "https://qa.loantechexper.com/admin/loan/due";
-    public String expectedRunningUrl = "https://qa.loantechexper.com/admin/loan/running";
-    public String expectedPendingUrl = "https://qa.loantechexper.com/admin/loan/pending";
+
+
+
 }
