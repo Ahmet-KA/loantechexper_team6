@@ -26,4 +26,6 @@ public class AdminLogin {
     public WebElement adminDashoardyazisi;
 
     ////
+
+    //bu bir cakısmadır
 }
