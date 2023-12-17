@@ -3,6 +3,7 @@ package pages.Visitor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utilities.ConfigReader;
 import utilities.Driver;
 
 public class VisitorHomePage {
@@ -45,7 +46,7 @@ public class VisitorHomePage {
     public WebElement footerLoanPlansLinkElementi;
     @FindBy(xpath = "//p[@class=\"mb-0 t-text-white text-center text-capitalize\"]")
     public WebElement footerCopyRightElement;
-
+    public String expectedHomePageUrl = ConfigReader.getProperty("url");
 
 
 
