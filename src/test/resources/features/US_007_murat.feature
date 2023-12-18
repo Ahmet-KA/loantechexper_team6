@@ -6,26 +6,22 @@ Feature: [US_007] Bir ziyaretci olarak Loan Planlara ulasabilecegim ve secebilec
     * Cookiesi kapatir
 
 
-  @f0701
   Scenario: [TC_01 > US_007] Anasayfa Plans menusunden Loan plans sayfasina erisilebildigini dogrular.
     * Plans menusune tiklar
     * Loan sayfasina erisebildigini dogrular
     * Sayfayi kapatir
 
 
-  @f0702
   Scenario: [TC_02 > US_007] Anasayfa footerda Loan Plans link textinin gorunur oldugunu dogrular
     * Loan Plans link textinin gorunur oldugunu dogrular
     * Sayfayi kapatir
 
 
-  @f0703
   Scenario: [TC_03 > US_007] Anasayfa footerda Loan Plans linkinin aktif oldugunu dogrular
     * Loan Plans link textine tiklar ve aktif oldugunu dogrular
     * Sayfayi kapatir
 
 
-  @f0704
   Scenario: [TC_04 > US_007] Basic Loan basligi altindaki Loan Plan kartlarinin gorunur oldugunu dogrular
     * Plans menusune tiklar
     * Basic Loan butonuna tiklar
@@ -34,7 +30,6 @@ Feature: [US_007] Bir ziyaretci olarak Loan Planlara ulasabilecegim ve secebilec
     * Sayfayi kapatir
 
 
-  @f0705
   Scenario: [TC_05 > US_007] Loan Plan kartlarinin altinda bulunan Apply Now butonlarinin gorunur oldugunu dogrular
     * Plans menusune tiklar
     * Basic Loan butonuna tiklar
@@ -42,14 +37,12 @@ Feature: [US_007] Bir ziyaretci olarak Loan Planlara ulasabilecegim ve secebilec
     * Sayfayi kapatir
 
 
-  @f0706
   Scenario: [TC_06 > US_007] Loan Plan kartlarinin altinda bulunan Apply Now butonlarinin aktif oldugunu dogrular
     * Plans menusune tiklar
     * Apply Now butonlarinin aktif oldugunu dogrular
     * Sayfayi kapatir
 
 
-  @f0707
   Scenario: [TC_07 > US_007] Loan Plans Sayfasında Home \ Loan Plans linklerinin islevini dogrular
     * Plans menusune tiklar
     * Home linkinin islevini dogrular

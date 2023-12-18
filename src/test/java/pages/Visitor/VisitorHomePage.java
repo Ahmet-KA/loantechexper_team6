@@ -46,7 +46,7 @@ public class VisitorHomePage {
     public WebElement footerLoanPlansLinkElementi;
     @FindBy(xpath = "//p[@class=\"mb-0 t-text-white text-center text-capitalize\"]")
     public WebElement footerCopyRightElement;
-    public String expectedHomePageUrl = ConfigReader.getProperty("url");
+
 
 
 

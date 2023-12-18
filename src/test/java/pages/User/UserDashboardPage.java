@@ -14,4 +14,7 @@ public class UserDashboardPage {
 
     @FindBy(xpath = "//*[text()='Change Password']")
     WebElement changePasswordButonu;
+
+    @FindBy(xpath = "//*[@id=\"header\"]/div/nav/div[2]/a")
+    public WebElement dashboardLoginElement;
 }

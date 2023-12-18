@@ -6,12 +6,11 @@ import pages.Visitor.VisitorLoanPage;
 import pages.Visitor.VisitorPlansPage;
 import utilities.ConfigReader;
 import utilities.Driver;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static utilities.ReusableMethods.*;
 
-public class US_007_Steps {
+public class US_007_VisitorLoanPlansSteps {
 
     VisitorHomePage homePage = new VisitorHomePage();
     VisitorLoanPage loanPage = new VisitorLoanPage();
@@ -87,8 +86,9 @@ public class US_007_Steps {
     @Given("Home linkinin islevini dogrular") // US_07 TC_07
     public void home_linkinin_islevini_dogrular() {
         plansPage.loanPlansHomeLinkElement.click();
+        String expectedHomePageUrl = ConfigReader.getProperty("url");
         String actuelHomePageUrl = Driver.getDriver().getCurrentUrl();
-        assertEquals(homePage.expectedHomePageUrl, actuelHomePageUrl);
+        assertEquals(expectedHomePageUrl, actuelHomePageUrl);
     }
 
 
