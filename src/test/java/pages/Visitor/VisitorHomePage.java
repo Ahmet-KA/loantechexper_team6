@@ -1,9 +1,12 @@
 package pages.Visitor;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
+
+import java.util.Set;
 
 public class VisitorHomePage {
 
@@ -122,6 +125,86 @@ public class VisitorHomePage {
     public WebElement cityButon;
     @FindBy (xpath = "//*[@class='btn btn--base btn--xxl w-100 text-capitalize xl-text']")
     public WebElement submitButon;
+
+
+
+    //afife<<<< userhomepage
+    @FindBy (xpath = "//*[@class='img-fluid logo__is']")
+    public WebElement loanTechLogo;
+
+    @FindBy(xpath = "//*[@class='footer-copyright']")
+    public WebElement footerCopyright;
+    @FindBy (xpath = "//*[@aria-label='Instagram']")
+    public WebElement instagramHomePageLogo;
+
+    public void switchWindow(){
+        String homeNWD=Driver.getDriver().getWindowHandle();
+        Set<String> whdSeti=Driver.getDriver().getWindowHandles();
+        String newWHD="";
+        for (String each:whdSeti) {
+            if (!each.equals(homeNWD))
+                newWHD=each;}
+        Driver.getDriver().switchTo().window(newWHD);
+    }
+
+
+
+    //afife>>>>>>>userhomepage
+
+
+
+
+
     @FindBy (xpath = "")
     public WebElement successfulNotu;
+
+
+
+    public void visitorEmailNumberadressGorunurTesti(){
+        emailButon.isDisplayed();
+        numberButon.isDisplayed();
+        adressButon.isDisplayed();
+
+    }
+
+    public void visitorHomeButtonsVisibleEnabledTest(){
+
+        siteLogo.isDisplayed();
+        siteLogo.isEnabled();
+        homeButon.isDisplayed();
+        homeButon.isEnabled();
+        aboutButon.isDisplayed();
+        aboutButon.isEnabled();
+        plansButon.isDisplayed();
+        plansButon.isEnabled();
+        blogButon.isDisplayed();
+        blogButon.isEnabled();
+        contactButon.isDisplayed();
+        contactButon.isEnabled();
+        loginButon.isDisplayed();
+        loginButon.isEnabled();
+        getStartedButton.isDisplayed();
+        getStartedButton.isEnabled();
+
+    }
+
+    public void visitorHomePageisDisplsyedTest(){
+        homeButon.click();
+        Assert.assertTrue(siteLogo.isDisplayed());
+        aboutButon.click();
+        Assert.assertTrue(aboutSayfa.isDisplayed());
+        plansButon.click();
+        Assert.assertTrue(plansSayfa.isDisplayed());
+        blogButon.click();
+        Assert.assertTrue(aboutSayfa.isDisplayed());
+        contactButon.click();
+        Assert.assertTrue(contactButon.isDisplayed());
+        loginButon.click();
+        Assert.assertTrue(loginSayfa.isDisplayed());
+        getStartedButton.click();
+        Assert.assertTrue(getStartedDayfa.isDisplayed());
+
+
+    }
+
 }

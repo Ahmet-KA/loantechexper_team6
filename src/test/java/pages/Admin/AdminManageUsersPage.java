@@ -1,9 +1,12 @@
 package pages.Admin;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
+
+import java.util.List;
 
 public class AdminManageUsersPage {
 
@@ -47,5 +50,33 @@ public class AdminManageUsersPage {
     // User Detail
     @FindBy (xpath = "//a[@class='btn btn--primary btn--gradi btn--shadow w-100 btn-lg']")
     WebElement loginAsAUserButonu;
+
+    //afife<<<< activeUserspage
+    @FindBy(xpath = "//*[text()='Active Users']")
+    public WebElement activeUsersTitle;
+    @FindBy (xpath = "//input[@name='search']")
+    public WebElement userNameSearchBox;
+    @FindBy (xpath = "//button[@type='submit']")
+    public WebElement searchSubmitButton;
+    @FindBy (xpath = "//*[@class='btn btn-sm btn-outline--primary']")
+    public WebElement detailsButton;
+    @FindBy (xpath = " //h6[contains(text(),'User Detail')]")
+    public WebElement userDetailPageTitle;
+    @FindBy (xpath = "//*[@class='widget-two__btn btn btn-outline--success']")
+    public WebElement viewAllDepositIcon;
+    @FindBy (xpath = "//tbody//tr")
+    public List<WebElement> activeUsersList;
+    @FindBy (xpath = "//*[text()='Deposit History']")
+    public WebElement depositHistoryPageTitle;
+    public void activeUserTableBaslikAssert(){
+        Assert.assertTrue(emailSutunBaslik.isDisplayed());
+        Assert.assertTrue(userSutunBaslik.isDisplayed());
+        Assert.assertTrue(countrySutunBaslik.isDisplayed());
+        Assert.assertTrue(joinedAtSutunBaslik.isDisplayed());
+        Assert.assertTrue(balanceSutunBaslik.isDisplayed());
+        Assert.assertTrue(actionSutunBaslik.isDisplayed());
+    }
+
+
 
 }
