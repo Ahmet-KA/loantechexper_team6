@@ -5,6 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.Set;
+
 public class VisitorHomePage {
 
     public VisitorHomePage(){
@@ -122,6 +124,32 @@ public class VisitorHomePage {
     public WebElement cityButon;
     @FindBy (xpath = "//*[@class='btn btn--base btn--xxl w-100 text-capitalize xl-text']")
     public WebElement submitButon;
-    @FindBy (xpath = "")
-    public WebElement successfulNotu;
+
+
+    //afife<<<< userhomepage
+    @FindBy (xpath = "//*[@class='img-fluid logo__is']")
+    public WebElement loanTechLogo;
+
+    @FindBy(xpath = "//*[@class='footer-copyright']")
+    public WebElement footerCopyright;
+    @FindBy (xpath = "//*[@aria-label='Instagram']")
+    public WebElement instagramHomePageLogo;
+
+    public void switchWindow(){
+        String homeNWD=Driver.getDriver().getWindowHandle();
+        Set<String> whdSeti=Driver.getDriver().getWindowHandles();
+        String newWHD="";
+        for (String each:whdSeti) {
+            if (!each.equals(homeNWD))
+                newWHD=each;}
+        Driver.getDriver().switchTo().window(newWHD);
+    }
+
+
+
+    //afife>>>>>>>userhomepage
+
+
+
+
 }

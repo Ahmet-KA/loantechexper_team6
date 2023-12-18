@@ -1,10 +1,12 @@
 package pages.Admin;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AdminDepositsPage {
@@ -64,7 +66,7 @@ public class AdminDepositsPage {
     @FindBy (xpath = "///button[@class='btn btn--primary input-group-text']")
     public WebElement dateSearchButton;
     @FindBy (xpath = "//tbody//tr")
-    public List<WebElement> successdepositList;// is not empty seklinde kontrol yapabilirim
+    public List<WebElement> successdepositList;
 
 
 
@@ -117,7 +119,7 @@ public class AdminDepositsPage {
     public WebElement pendingDepositPageTitle;
 
     @FindBy (xpath = "(//a[@class='btn btn-sm btn-outline--primary ms-1'])[1]")
-    public WebElement ilkKayıtDetailsButton;
+    public WebElement ilkPendingDetailsButton;
     @FindBy (xpath = "//*[@class='btn btn-outline--success btn-sm ms-1 confirmationBtn']")
     public WebElement approveButton;
     @FindBy (xpath = "//*[@class='btn btn-outline--danger btn-sm ms-1 rejectBtn']")
@@ -182,6 +184,60 @@ public class AdminDepositsPage {
     public WebElement approvedDepositsDetailedInformation9;
     @FindBy(xpath  = "(//li[@class='list-group-item d-flex justify-content-between align-items-center'])[10]")
     public WebElement approvedDepositsDetailedInformation10;
+
+    //afife<<<<<<DepositHistorypage
+
+    @FindBy (xpath = "//th[text()='User']")
+    public WebElement userSutunBaslik;
+    @FindBy (xpath = "//th[text()='Action']")
+    public WebElement actionSutunBaslik;
+    @FindBy (xpath = "//*[@class='list-group-item d-flex justify-content-between align-items-center']")
+    public List<WebElement> depositCardBaslikList;
+    @FindBy (xpath = "//a[@class='item-link']")
+    public WebElement successDepositLink;
+    public void cardBilgiGoruntuleAssert(){
+        List<String> baslikList=new ArrayList<>();
+        baslikList.add("Date"); baslikList.add("Transaction Number"); baslikList.add("Username");
+        baslikList.add("Method"); baslikList.add("Amount"); baslikList.add("Charge");
+        baslikList.add("After Charge"); baslikList.add("Rate"); baslikList.add("Payable");baslikList.add("Status");
+
+        for (int i = 0; i < depositCardBaslikList.size(); i++) {
+            if (depositCardBaslikList.get(i).getText().contains(baslikList.get(i))){
+                Assert.assertTrue(depositCardBaslikList.get(i).isDisplayed());
+            }
+        }
+    }
+    public void userDepositTableBaslikAssert() {
+        Assert.assertTrue(gatewaySutunBaslik.isDisplayed());
+        Assert.assertTrue(initiatedSutunBaslik.isDisplayed());
+        Assert.assertTrue(userSutunBaslik.isDisplayed());
+        Assert.assertTrue(amountSutunBaslik.isDisplayed());
+        Assert.assertTrue(statusSutunBaslik.isDisplayed());
+        Assert.assertTrue(actionSutunBaslik.isDisplayed());
+    }
+
+    // pending deposit sayfasi reject-aprove islemleri
+    @FindBy (xpath = "(//a[@class='item-link'])[2]")
+    public WebElement pendingDepositLink;
+    @FindBy (xpath = "//h5[text()='Reject Deposit Confirmation']")
+    public WebElement rejDepoConfirmSayfaBaslik;
+    @FindBy (xpath = "//*[@class='modal-content']")
+    public WebElement rejDepoConfirmModal;
+    @FindBy (xpath = "//*[@id='message']")
+    public WebElement rejDepoMessageBox;
+    @FindBy (xpath = "//*[@class='btn btn--primary w-100 h-45']")
+    public WebElement rejMessageSubmitButton;
+    @FindBy (xpath = "//*[text()='Deposit request rejected successfully']")////bu kısımda mesajı yakalamalı
+    public WebElement rejectSuccessText;
+    @FindBy (xpath = "//button[@class='btn btn--primary']")
+    public WebElement approveAlertYesButton;
+    @FindBy (xpath = "//*[text()='Deposit request approved successfully']")////bu kısımda mesajı yakalamalı
+    public WebElement approveSuccessText;
+    @FindBy (xpath = "//tbody//tr")
+    public List<WebElement> userDepositHistoryList;
+
+
+
 
 
 
