@@ -26,6 +26,8 @@ public class AdminLogin {
     @FindBy (xpath = "//h6[@class='page-title']")
     public WebElement adminDashoardyazisi;
 
+
+
     public void adminLoginGirisYap(String adminname,String adminPassword){
         usernameTextBox.sendKeys(adminname);
         passwordTextBox.sendKeys(adminPassword);
@@ -33,5 +35,6 @@ public class AdminLogin {
         ReusableMethods.bekle(2);
 
     }
+
 
 }
