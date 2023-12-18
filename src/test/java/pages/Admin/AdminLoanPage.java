@@ -13,21 +13,7 @@ public class AdminLoanPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    // LOANS MENU ELEMENTLERİ  -Admin----Murat
-    @FindBy(xpath = "//div[2]/div[1]/ul/li[5]/a")
-    public WebElement adminPanelLoansElement;
-    @FindBy(xpath = "//span[text()=\"Pending Loans\"]")
-    public WebElement loansMenuPendingLoansElement;
-    @FindBy(xpath = "//span[text()=\"Running Loans\"]")
-    public WebElement loansMenuRunningLoansElement;
-    @FindBy(xpath = "//span[text()=\"Due Loans\"]")
-    public WebElement loansMenuDuoLoansElement;
-    @FindBy(xpath = "//span[text()=\"Paid Loans\"]")
-    public WebElement loansMenuPaidLoansElement;
-    @FindBy(xpath = "//span[text()=\"Rejected Loans\"]")
-    public WebElement loansMenuRejectedLoansElement;
-    @FindBy(xpath = "//span[text()=\"All Loans\"]")
-    public WebElement loansMenuAllLoansElement;
+
 
 
 

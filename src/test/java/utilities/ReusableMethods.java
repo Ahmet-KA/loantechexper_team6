@@ -187,6 +187,7 @@ public class ReusableMethods {
         return element;
     }
 
+
     // JavaScriptExecutor kullanıp sayfayı kaydırarak bir WebElement'in görünür olmasını sağlar
     public static void goruneneKadarKaydir(WebElement webElement) {
 
@@ -202,6 +203,13 @@ public class ReusableMethods {
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", webElement);
 
     }
+
+    public static void clickWithJS(WebElement element) {
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", element);
+    }
+
+
 }
 
 
