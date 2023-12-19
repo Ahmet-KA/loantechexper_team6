@@ -19,6 +19,6 @@ public class VisitorPlansPage {
     public WebElement loanPlansHomeLinkElement; // HOME / LOAN PLANS
     @FindBy(xpath = "//span[text()=\"Loan Plans\"]")
     public WebElement loanPlansLinkElement;  // HOME / LOAN PLANS
-    @FindBy(xpath = "//h3[@class=\" text-capitalize mt-0 text-center text-md-start ps-xl-3\"]")
-    public WebElement loanPlansLikeToBecomeTextElement;
+
+
 }
