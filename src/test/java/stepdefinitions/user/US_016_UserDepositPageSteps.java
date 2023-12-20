@@ -1,4 +1,4 @@
-package stepdefinitions.user;
+package stepdefinitions.User;
 
 import io.cucumber.java.en.Given;
 import org.openqa.selenium.support.ui.Select;
@@ -17,7 +17,7 @@ public class US_016_UserDepositPageSteps {
     UserLoginPage loginPage = new UserLoginPage();
     UserDashboardPage dashboardPage = new UserDashboardPage();
 
-    Select gatewayDropdown = new Select(depositPage.selectGatewayBoxElement);
+    Select gatewayDropdown;
 
     public void cookiesi_kapatir() {
         bekle(2);
@@ -80,11 +80,13 @@ public class US_016_UserDepositPageSteps {
 
     @Given("Select Gateway dropdown menusunden {string} secer")
     public void select_gateway_dropdown_menusunden_manual_i_secer(String optionText) {
+        gatewayDropdown = new Select(depositPage.selectGatewayBoxElement);
         gatewayDropdown.selectByVisibleText(optionText);
     }
 
     @Given("{string} in secilebildidigini dogrular") // US_16 TC_06
     public void manual_in_secilebildidigini_dogrular(String expectedOptionText) {
+        gatewayDropdown = new Select(depositPage.selectGatewayBoxElement);
         String actuelSelectedText = gatewayDropdown.getFirstSelectedOption().getText();
         assertEquals(expectedOptionText, actuelSelectedText);
 
