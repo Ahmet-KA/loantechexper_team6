@@ -147,8 +147,8 @@ public class VisitorHomePage {
                 newWHD=each;}
         Driver.getDriver().switchTo().window(newWHD);
     }
-
-
+    @FindBy (xpath = "//a[contains(@href,'https://www.google.com')]")
+    public WebElement googleIcon;
 
     //afife>>>>>>>userhomepage
 
