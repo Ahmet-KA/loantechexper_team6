@@ -24,15 +24,15 @@ public class UserWithdrawPage {
     public WebElement submitButton;
     @FindBy(xpath ="//h5[@class='card-title']")
     public WebElement withdrawTextBox;
-    @FindBy(xpath ="//button[@class='accordion-button']")
+    @FindBy(xpath ="//button[@class='accordion-button collapsed']")
     public WebElement withdrawAccordion;
     @FindBy(xpath ="(//span[@class='value'])[1]")
     public WebElement accordionCharge;
-    @FindBy(xpath ="//span[@class='value'])[2]")
+    @FindBy(xpath ="(//span[@class='value'])[2]")
     public WebElement accordionAfterCharge;
-    @FindBy(xpath ="//span[@class='value'])[3]")
+    @FindBy(xpath ="(//span[@class='value'])[3]")
     public WebElement accordionConversion;
-    @FindBy(xpath ="//span[@class='value'])[4]")
+    @FindBy(xpath ="(//span[@class='value'])[4]")
     public WebElement accordionStatus;
     @FindBy(xpath  = "(//a[@href='https://qa.loantechexper.com/user/withdraw'])[3]")
     public WebElement withdrawMoneyButton;

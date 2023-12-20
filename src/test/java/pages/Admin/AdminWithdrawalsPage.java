@@ -151,7 +151,7 @@ public class AdminWithdrawalsPage {
     public WebElement reasonOfRejectionTextBox;
     @FindBy(xpath = "(//button[@type='submit'])[2]")
     public WebElement reaasonSubmitButton;
-    @FindBy(xpath = "//div[@class='iziToast-body']")
+    @FindBy(xpath = "//p[@class='iziToast-message slideIn']")
     public WebElement confirmationAlertBox;
     @FindBy(xpath = "(//span[@class='badge badge--danger'])[1]")
     public WebElement rejectedStatusTextBox;
