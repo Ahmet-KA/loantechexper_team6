@@ -1,4 +1,4 @@
-@f07
+@US_007
 Feature: [US_007] Bir ziyaretci olarak Loan Planlara ulasabilecegim ve secebilecegim bir sayfa olmasini istiyorum
 
   Background: Ziyaretci ilgili anasayfaya gider
@@ -46,5 +46,6 @@ Feature: [US_007] Bir ziyaretci olarak Loan Planlara ulasabilecegim ve secebilec
   Scenario: [TC_07 > US_007] Loan Plans Sayfasında Home \ Loan Plans linklerinin islevini dogrular
     * Plans menusune tiklar
     * Home linkinin islevini dogrular
+    * Plans menusune tiklar
     * Loan Plans linkinin islevini dogrular
     * Sayfayi kapatir

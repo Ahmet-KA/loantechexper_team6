@@ -44,43 +44,55 @@ Feature: Kayitli bir kullanici (User ) olarak Mevduatlarimi gorebilmek ve islem 
 
 
   Scenario: [TC_07 > US_016] Deposit Methods sayfasindaki Amount textbox'ina min(100) - max(5000) deger araliginda bir deger girilebildigi dogrulanir
+    * Kullanici Deposit Methods sayfasina gider
+    * Select Gateway dropdown menusunden "Manual" secer
     * Amount textbox'ina "enterAmount" girer
     * Submit butonuna tiklar
-    * "enterAmount" girildigini dogrular
+    * Uygun deger girildigini dogrular
     * Sayfayi kapatir
 
 
   Scenario: [TC_08 > US_016] Limit-Charge-Payable degerleri goruntulendigi dogrulanir
+    * Kullanici Deposit Methods sayfasina gider
+    * Select Gateway dropdown menusunden "Manual" secer
     * Amount textbox'ina "enterAmount" girer
     * Limit-Charge-Payable degerlerinin goruldugunu dogrular
     * Sayfayi kapatir
 
 
-
   Scenario: [TC_09 > US_016] Submit butonuna tiklandiginda 'You have requested 'enterAmount' USD , Please pay 'payableAmount' USD for successful payment' yazisinin goruntulendigi dogrulanir
+    * Kullanici Deposit Methods sayfasina gider
+    * Select Gateway dropdown menusunden "Manual" secer
     * Amount textbox'ina "enterAmount" girer
     * Submit butonuna tiklar
-    * 'You have requested 'enteredAmount' USD , Please pay 'payableAmount' USD for successful payment' yazisinin goruldugunu dogrular
+    * 'You have requested 'enterAmount' USD , Please pay 'payable' USD for successful payment' yazisinin goruldugunu dogrular
     * Sayfayi kapatir
 
 
   Scenario: [TC_10 > US_016] PAY NOW butonuna tiklandiginda Deposit History sayfasina gecildigi dogrulanir
+    * Kullanici Deposit Methods sayfasina gider
+    * Select Gateway dropdown menusunden "Manual" secer
     * Amount textbox'ina "enterAmount" girer
     * Submit butonuna tiklar
-    * PAY NOW butonuna tiklar ve Deposit History sayfasina gecildigi dogrular
+    * PAY NOW butonuna tiklar
+    * Deposit History sayfasina gecildigi dogrular
     * Sayfayi kapatir
 
 
   Scenario: [TC_11 > US_016] "Deposit History" sayfasina gecildiginde 'You have deposit request has been taken' yazisinin ve islem tablosunda yapilan islemin goruntulendigi dogrulanir
+    * Kullanici Deposit Methods sayfasina gider
+    * Select Gateway dropdown menusunden "Manual" secer
     * Amount textbox'ina "enterAmount" girer
     * Submit butonuna tiklar
     * PAY NOW butonuna tiklar
     * islem tablosunda yapilan islemin goruntulendigi dogrular
-    * 'You have deposit request has been taken' yazisini gordugunu dogrular
+    * You have deposit request has been taken, yazisini gordugunu dogrular
     * Sayfayi kapatir
 
 
   Scenario: [TC_12 > US_016] Deposit Now butonuna tiklandiginda Deposit Methods sayfasina gecildigi dogrulanir
+    * Kullanici Deposit Methods sayfasina gider
+    * Select Gateway dropdown menusunden "Manual" secer
     * Amount textbox'ina "enterAmount" girer
     * Submit butonuna tiklar
     * PAY NOW butonuna tiklar
