@@ -33,19 +33,38 @@ public class AdminManageUsersPage {
 
     // Active User
     @FindBy (xpath = "//h6[@class='page-title']")
-    WebElement Notificationsendto;
+   public WebElement notificationsendto;
 
     @FindBy (xpath = "(//*[@class='btn btn-sm btn-outline--primary'])[1]")
-    WebElement DetailsButonuBirinciSira;
+    public WebElement detailsButonuBirinciSira;
 
     // user detail sayfasi
     @FindBy (xpath = "//*[@class='page-title']")
-    WebElement userDetailKullaniciAdi;
+   public WebElement userDetailKullaniciAdi;
     // user detail
     @FindBy (xpath = "//*[@class='btn btn--secondary btn--shadow w-100 btn-lg']")
-    WebElement notificationButonu;
+    public WebElement notificationButonu;
     // User Detail
     @FindBy (xpath = "//a[@class='btn btn--primary btn--gradi btn--shadow w-100 btn-lg']")
-    WebElement loginAsAUserButonu;
+   public WebElement loginAsAUserButonu;
+    @FindBy (xpath = "//h6[@class='page-title']")
+    public WebElement activeUsersText;
+
+    // Send Notification
+    @FindBy(xpath = "//a[@class='btn btn-outline--primary btn-sm']")
+    public WebElement sendNotificationButonug;
+
+    @FindBy (xpath = "//input[@class='form-control']")
+    public  WebElement sendNotificationSubjectTextBox;
+
+    @FindBy (xpath = "//*[@contenteditable='true']")
+    public WebElement sendNotificatinMessageTextBox;
+
+    @FindBy (xpath = "//button[@class='btn w-100 h-45 btn--primary']")
+    public WebElement sendNotificationSubmitButton;
+
+    @FindBy (xpath = "//*[@style='padding-left: 33px;']")
+    public WebElement mesajgonderilditexti;
+
 
 }

@@ -29,4 +29,7 @@ public class UserLoginPage {
 
     @FindBy(xpath = "//*[@class='btn btn--base btn--xxl w-100 text-capitalize xl-text']")
     public WebElement loginButton;
+
+    @FindBy(xpath = "(//*[@type='submit'])[1]")
+    public WebElement loginButtonIki;
 }

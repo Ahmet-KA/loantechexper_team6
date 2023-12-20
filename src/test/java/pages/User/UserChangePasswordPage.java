@@ -16,20 +16,32 @@ public class UserChangePasswordPage {
 
     //Change password sayfası
     @FindBy(xpath = "//div[@class='mb-4']")
-    WebElement changePasswordTeksti;
+    public WebElement changePasswordTeksti;
     //Change password sayfası
-    @FindBy (xpath = "(//input[@class='form-control form--control'])[1]")
-    WebElement currentPasswordAlanı;
+    @FindBy (xpath = "//input[@class='form-control form--control']")
+    public WebElement currentPasswordAlani;
     //Change password sayfası
     @FindBy (xpath = "(//input[@class='form-control form--control'])[2]")
-    WebElement confirmPasswprdAlani;
+    public WebElement confirmPasswprdAlani;
     //Change password sayfası
     @FindBy (xpath = "//input[@class='form-control form--control  secure-password ']")
-    WebElement passwordAlani;
+    public  WebElement passwordAlani;
     //Change password sayfası
     @FindBy(xpath = "//button[@class='btn btn--base w-100 mt-3'] ")
-    WebElement submitButonu;
+    public WebElement submitButonu;
     //Change Password Sayfasi
     @FindBy (xpath = "(//*[@class='iziToast-message slideIn'])[2]")
-    WebElement thePasswordConfirmationDoesnotUyarisi;
+    public WebElement thePasswordConfirmationDoesnotUyarisi;
+
+    @FindBy(xpath = "//*[text()='Change Password']")
+    public WebElement changePasswordButonu;
+
+    @FindBy (xpath = "//h3[@class='mb-2']")
+    public WebElement cPSayfasiChangePasswordTexti;
+
+    @FindBy (xpath = "//p[@class='iziToast-message slideIn']")
+    public WebElement passwordChangesSuccesfullyMesaji;
+
+
+
 }
