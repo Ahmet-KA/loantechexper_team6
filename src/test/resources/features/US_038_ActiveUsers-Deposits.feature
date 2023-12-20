@@ -1,4 +1,4 @@
-@activeUser
+
 
 Feature: Admin, sitede aktif kullanıcıları gorup Deposit islemlerini yonetebilmeli
   Background:
@@ -51,9 +51,10 @@ Feature: Admin, sitede aktif kullanıcıları gorup Deposit islemlerini yonetebi
     And acilan sayfada kisiye ait Deposit History listesinin ve liste baslıklarının goruntulendigini dogrular
     And sayfayı kapatır
 
-
+  @activeUser
   Scenario: TC06-Deposit History sayfasındaki Details butonu testi
 
+    And acilan menude Active Users basligina tiklar
     And Active Users sayfasındaki search kutusuna "isim" girer ve ara butonuna tıklar
     And satir sonundaki Details butonuna tiklar
     And Deposited bolumundeki View All iconuna tıklar
@@ -124,7 +125,7 @@ Feature: Admin, sitede aktif kullanıcıları gorup Deposit islemlerini yonetebi
     * acilan islem detay sayfasında approve ve reject butonlarının gorunur ve aktif oldugunu dogrular
     * sayfayı kapatır
 
-  @activeUser
+
   Scenario: TC12- Pending deposit reject islemi testi
 
     * acilan menude Active Users basligina tiklar
