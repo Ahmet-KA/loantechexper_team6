@@ -1,4 +1,4 @@
-package stepdefinitions.user;
+package stepdefinitions.User;
 
 import io.cucumber.java.en.Given;
 import org.openqa.selenium.support.ui.Select;
@@ -19,7 +19,12 @@ public class US_016_UserDepositPageSteps {
     static UserLoginPage loginPage = new UserLoginPage();
     static UserDashboardPage dashboardPage = new UserDashboardPage();
 
+
+
+
+
     static Select gatewayDropdown;
+
 
     public static void cookiesi_kapatir() {
         bekle(2);

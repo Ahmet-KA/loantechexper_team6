@@ -1,4 +1,4 @@
-package stepdefinitions.user;
+package stepdefinitions.User;
 
 import io.cucumber.java.en.Given;
 import org.junit.Assert;
@@ -8,12 +8,13 @@ import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class US_013_UserLoginPageStep {
+public class US_013_UserLoginPageStepDefinitions {
 
     VisitorHomePage visitorHomePage = new VisitorHomePage();
     UserLoginPage userLoginPage = new UserLoginPage();
     @Given("Kayitli kullanici olarak {string} adresine gidilir.")
     public void kayitli_kullanici_olarak_adresine_gidilir(String string) {
+        ReusableMethods.bekle(1);
         Driver.getDriver().get(ConfigReader.getProperty("url"));
     }
     @Given("Anasayfada login button gorunurlugu ve aktifligi dogrulanır.")
@@ -39,6 +40,7 @@ public class US_013_UserLoginPageStep {
     @Given("Browser kapatilir.")
     public void browser_kapatilir() {
         Driver.quitDriver();
+        ReusableMethods.bekle(1);
     }
 
     @Given("Login button tiklanir ve Login form üzerinde username,password textbox,remember me checkbox,forgotpassword linki ve login button gorunur ve aktif olmalidir.")

@@ -4,7 +4,9 @@ import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 import java.util.List;
 
@@ -76,6 +78,92 @@ public class AdminManageUsersPage {
         Assert.assertTrue(balanceSutunBaslik.isDisplayed());
         Assert.assertTrue(actionSutunBaslik.isDisplayed());
     }
+
+    @FindBy(xpath = "//*[@class='widget-two__btn btn btn-outline--primary'][1]")
+    public WebElement viewAllBalanceIcon;
+
+    @FindBy(xpath = "//h6[contains(text(),'Transaction Logs')]")
+    public WebElement transactionLogsPageTitle;
+
+    @FindBy(xpath = "//table/thead/tr/th")
+    public List<WebElement> tableTransactionLogsPage;
+
+    @FindBy(xpath = "//*[@name='trx_type']")
+    public WebElement typeFilter;
+
+    @FindBy(xpath = "//*[@name='remark']")
+    public  WebElement remarkFilter;
+
+    @FindBy(xpath = "//*[@class='datepicker--cell datepicker--cell-day -current-']")
+    public WebElement dateFilterSelected;
+
+    @FindBy(xpath = "//*[@class='datepicker-here form-control']")
+    public WebElement dateFilter;
+
+    @FindBy(xpath = "//*[@class='btn btn--primary w-100 h-45']")
+    public WebElement filterButton;
+
+    @FindBy(xpath = "//table/tbody/tr")
+    public List<WebElement> transactionLogsTable;
+
+    @FindBy(xpath = "//*[@class='btn btn--success btn--shadow w-100 btn-lg bal-btn']")
+    public WebElement balanceButton;
+
+    @FindBy(xpath = "//h5[@class='modal-title']")
+    public WebElement addBalancePageTitle;
+
+    @FindBy(xpath = "//input[@name='amount']")
+    public WebElement amountTextBox;
+
+    @FindBy(xpath = "//textarea[@name='remark']")
+    public WebElement remarkTextBox;
+
+    @FindBy(xpath = "//*[@class='btn btn--primary h-45 w-100'][1]")
+    public WebElement submitButton;
+
+    @FindBy(xpath = "//*[@class='iziToast-wrapper iziToast-wrapper-topRight']")
+    public WebElement addBalanceMessage;
+
+    @FindBy(xpath = "//*[@class='btn btn--danger btn--shadow w-100 btn-lg bal-btn']")
+    public WebElement subtractBalanceButton;
+
+    @FindBy(xpath = "//*[@class='iziToast-wrapper iziToast-wrapper-topRight']")
+    public WebElement subtractBalanceMessage;
+
+    @FindBy(xpath = "//h5[@class='modal-title'][1]")
+    public WebElement subtractBalancePageTitle;
+
+    public void filterSelectedValidate(){
+
+        Select select = new Select(typeFilter);
+        select.selectByVisibleText("Plus");
+
+        select = new Select(remarkFilter);
+        select.getFirstSelectedOption();
+
+        dateFilter.click();
+        ReusableMethods.bekle(1);
+        dateFilterSelected.click();
+        ReusableMethods.bekle(1);
+        filterButton.click();
+
+        Assert.assertTrue(transactionLogsTable.size()>0);
+    }
+
+    public void addBalancePageControl(){
+
+        Assert.assertTrue(amountTextBox.isEnabled());
+        Assert.assertTrue(remarkTextBox.isEnabled());
+    }
+
+    public void subtractBalancePageControl(){
+
+        Assert.assertTrue(amountTextBox.isEnabled());
+        Assert.assertTrue(remarkTextBox.isEnabled());
+        ReusableMethods.bekle(1);
+    }
+
+
 
 
 
