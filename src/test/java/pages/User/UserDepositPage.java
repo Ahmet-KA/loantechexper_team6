@@ -8,11 +8,10 @@ import utilities.Driver;
 public class UserDepositPage {
 
 
-    public UserDepositPage(){
+    public UserDepositPage() {
 
-        PageFactory.initElements(Driver.getDriver(),this);
+        PageFactory.initElements(Driver.getDriver(), this);
     }
-
 
 
     // DEPOsIT MENU ELEMENTLERI -USER---Murat
@@ -30,8 +29,6 @@ public class UserDepositPage {
     public WebElement depositNowButtonElement;
     @FindBy(xpath = "//select[@name=\"gateway\"]")
     public WebElement selectGatewayBoxElement;
-    @FindBy(xpath = "//option[text()=\"Manual\"]")
-    public WebElement optionManuelElement;
     @FindBy(xpath = "//input[@name=\"amount\"]")
     public WebElement amountBoxElement;
     @FindBy(xpath = "//form//ul/li[1]")
@@ -46,4 +43,11 @@ public class UserDepositPage {
     public WebElement successfulPaymentTextElement;
     @FindBy(xpath = "//button[text()=\"Pay Now\"]")
     public WebElement payNowButtonElement;
+    @FindBy(xpath = "//p[@class=\"text-center mt-2\"]")
+    public WebElement successfulPaymentElement;
+    @FindBy(xpath = "(//h2[@class=\"accordion-header\"])[1]")
+    public WebElement yapilanIslemElement;
+    @FindBy(xpath = "//p[@class=\"iziToast-message slideIn\"]")
+    public WebElement YouHaveDepositRequestTextElement;
+
 }

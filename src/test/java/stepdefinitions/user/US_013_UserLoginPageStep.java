@@ -1,8 +1,7 @@
-package stepdefinitions.User;
+package stepdefinitions.user;
 
 import io.cucumber.java.en.Given;
 import org.junit.Assert;
-import org.openqa.selenium.JavascriptExecutor;
 import pages.User.UserLoginPage;
 import pages.Visitor.VisitorHomePage;
 import utilities.ConfigReader;
