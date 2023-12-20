@@ -13,6 +13,8 @@ public class UserDepositPage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
+
+
     // DEPOsIT MENU ELEMENTLERI -USER---Murat
     @FindBy(xpath = "//div[3]//div[1]/ul/li[4]/a")
     public WebElement dashboardDepositMenuButtonElement;
