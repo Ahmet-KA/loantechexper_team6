@@ -13,6 +13,7 @@ public class UserDashboardPage {
 
     }
 
+
     @FindBy (xpath = "//*[text()='Dashboard']")
     public WebElement userDashboardSayfasiDashboardText;
 
@@ -24,4 +25,11 @@ public class UserDashboardPage {
 
     @FindBy(xpath = "//a[@class='btn btn--base btn--xl w-100 policy']")
     public WebElement userDashboardAllowCookies;
+
+    @FindBy(xpath = "//*[text()='Change Password']")
+    WebElement changePasswordButonu;
+
+    @FindBy(xpath = "//*[@id=\"header\"]/div/nav/div[2]/a")
+    public WebElement dashboardLoginElement;
+
 }
