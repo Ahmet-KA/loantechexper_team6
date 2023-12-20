@@ -1,4 +1,4 @@
-package stepdefinitions.user;
+package stepdefinitions.User;
 
 import io.cucumber.java.en.Given;
 import org.openqa.selenium.support.ui.Select;
@@ -8,30 +8,55 @@ import pages.User.UserLoginPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static utilities.ReusableMethods.*;
+import static utilities.ReusableMethods.bekle;
 
 public class US_016_UserDepositPageSteps {
 
-    UserDepositPage depositPage = new UserDepositPage();
-    UserLoginPage loginPage = new UserLoginPage();
-    UserDashboardPage dashboardPage = new UserDashboardPage();
+    static UserDepositPage depositPage = new UserDepositPage();
+    static UserLoginPage loginPage = new UserLoginPage();
+    static UserDashboardPage dashboardPage = new UserDashboardPage();
 
-    Select gatewayDropdown = new Select(depositPage.selectGatewayBoxElement);
 
-    public void cookiesi_kapatir() {
+
+
+
+    static Select gatewayDropdown;
+
+
+    public static void cookiesi_kapatir() {
         bekle(2);
         loginPage.allowCookies.click();
     }
 
-    @Given("Kullanici anasayfaya gider {string} ve {string} ile login olur") // US_16
-    public void kullanici_anasayfaya_gider_ve_login_olur(String userName, String userPassword) {
+    /*  public static void enteredAmount(String userNameMrt, String userPassword,String selectOptionText) {
+          kullanici_anasayfaya_gider_ve_ile_login_olur
+                  (ConfigReader.getProperty(userNameMrt), ConfigReader.getProperty(userPassword));
+          //    * Dashboard sayfasinda Deposit butonuna tikla
+          depositPage.dashboardDepositMenuButtonElement.click();
+          //    * Select Gateway dropdown menusunden Manual'i secer
+          gatewayDropdown.selectByVisibleText(selectOptionText);
+          //    * Deposit Methods sayfasinda Amount textbox'ina "enterAmount" girer
+          depositPage.amountBoxElement.sendKeys(ConfigReader.getProperty("enterAmount"));
+      }
+        public static String payableAmount(String deger) {
+        double enterAmount = Double.parseDouble(deger);
+        return "" + (enterAmount * 1.22);
+    }
+
+   */
+
+
+    @Given("Kullanici anasayfaya gider {string} ve {string} ile login olur")
+    public static void kullanici_anasayfaya_gider_ve_ile_login_olur(String userNameMrt, String userPassword) {
         Driver.getDriver().get(ConfigReader.getProperty("url"));
         bekle(1);
         dashboardPage.dashboardLoginElement.click();
         cookiesi_kapatir();
         goruneneKadarKaydir(loginPage.userNameTextBox);
-        loginPage.userNameTextBox.sendKeys(ConfigReader.getProperty(userName));
+        loginPage.userNameTextBox.sendKeys(ConfigReader.getProperty(userNameMrt));
         loginPage.userPasswordTextBox.sendKeys(ConfigReader.getProperty(userPassword));
         loginPage.loginButton.click();
     }
@@ -80,70 +105,81 @@ public class US_016_UserDepositPageSteps {
 
     @Given("Select Gateway dropdown menusunden {string} secer")
     public void select_gateway_dropdown_menusunden_manual_i_secer(String optionText) {
+        gatewayDropdown = new Select(depositPage.selectGatewayBoxElement);
         gatewayDropdown.selectByVisibleText(optionText);
     }
 
     @Given("{string} in secilebildidigini dogrular") // US_16 TC_06
     public void manual_in_secilebildidigini_dogrular(String expectedOptionText) {
+        gatewayDropdown = new Select(depositPage.selectGatewayBoxElement);
         String actuelSelectedText = gatewayDropdown.getFirstSelectedOption().getText();
         assertEquals(expectedOptionText, actuelSelectedText);
 
     }
 
     @Given("Amount textbox'ina {string} girer")
-    public void amount_textbox_ina_girer(String string) {
-
+    public void amount_textbox_ina_girer(String enterAmount) {
+        depositPage.amountBoxElement.sendKeys(ConfigReader.getProperty(enterAmount));
     }
 
     @Given("Submit butonuna tiklar")
     public void submit_butonuna_tiklar() {
-
+        depositPage.submitButtonElement.click();
     }
 
-    @Given("{string} girildigini dogrular")
-    public void girildigini_dogrular(String string) {
-
+    @Given("Uygun deger girildigini dogrular") // US_16 TC_07
+    public void uygun_deger_girildigini_dogrular() {
+        bekle(2);
+        assertTrue(depositPage.successfulPaymentTextElement.isDisplayed());
     }
 
-    @Given("Limit-Charge-Payable degerlerinin goruldugunu dogrular")
+    @Given("Limit-Charge-Payable degerlerinin goruldugunu dogrular") // US_16 TC_08
     public void limit_charge_payable_degerlerinin_goruldugunu_dogrular() {
-
+        assertTrue(depositPage.amountBoxLimitElement.isDisplayed());
+        assertTrue(depositPage.amountBoxChargeElement.isDisplayed());
+        assertTrue(depositPage.amountBoxPayableElement.isDisplayed());
     }
 
 
-    @Given("'You have requested 'enteredAmount' USD , Please pay 'payableAmount' USD for successful payment' yazisinin goruldugunu dogrular")
-    public void you_have_requested_entered_amount_usd_please_pay_payable_amount_usd_for_successful_payment_yazisinin_goruldugunu_dogrular() {
-
+    @Given("'You have requested 'enterAmount' USD , Please pay 'payable' USD for successful payment' yazisinin goruldugunu dogrular")
+    public void successful_payment_yazisinin_goruldugunu_dogrular() { // US_16 TC_09
+        String actuelText = depositPage.successfulPaymentElement.getText();
+        String expectedText = "You have requested 500.00 USD , Please pay 610.00 USD for successful payment";
+        assertEquals(expectedText, actuelText);
     }
 
-    @Given("PAY NOW butonuna tiklar ve Deposit History sayfasina gecildigi dogrular")
-    public void pay_now_butonuna_tiklar_ve_deposit_history_sayfasina_gecildigi_dogrular() {
-
+    @Given("Deposit History sayfasina gecildigi dogrular") // US_16 TC_10
+    public void deposit_history_sayfasina_gecildigi_dogrular() {
+        assertTrue(depositPage.depositHistoryTextElement.isDisplayed());
     }
 
     @Given("PAY NOW butonuna tiklar")
     public void pay_now_butonuna_tiklar() {
-
+        depositPage.payNowButtonElement.click();
+        bekle(1);
     }
 
-    @Given("islem tablosunda yapilan islemin goruntulendigi dogrular")
+    @Given("islem tablosunda yapilan islemin goruntulendigi dogrular")// US_16 TC_11
     public void islem_tablosunda_yapilan_islemin_goruntulendigi_dogrular() {
-
+        assertTrue(depositPage.yapilanIslemElement.isDisplayed());
     }
 
-    @Given("{string} yazisini gordugunu dogrular")
-    public void yazisini_gordugunu_dogrular(String string) {
+    @Given("You have deposit request has been taken, yazisini gordugunu dogrular") // US_16 TC_11
+    public void yazisini_gordugunu_dogrular() {
+        assertTrue(depositPage.YouHaveDepositRequestTextElement.isDisplayed());
 
     }
 
     @Given("Deposit Now butonuna tiklar")
     public void deposit_now_butonuna_tiklar() {
-
+        depositPage.depositNowButtonElement.click();
+        bekle(1);
     }
 
-    @Given("Deposit Methods sayfasina gecildigini dogrular")
+    @Given("Deposit Methods sayfasina gecildigini dogrular") // US_16 TC_12
     public void deposit_methods_sayfasina_gecildigini_dogrular() {
-
+        assertTrue(depositPage.depositMethodsTextElement.isDisplayed());
     }
+
 
 }

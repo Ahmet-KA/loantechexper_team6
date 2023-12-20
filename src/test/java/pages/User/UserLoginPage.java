@@ -35,6 +35,10 @@ public class UserLoginPage {
     @FindBy(xpath = "//*[@class='btn btn--base btn--xxl w-100 text-capitalize xl-text']")
     public WebElement loginButton;
 
+
+    @FindBy(xpath = "(//*[@type='submit'])[1]")
+    public WebElement loginButtonIki;
+
     @FindBy(xpath = "//*[@class='form-check-input']")
     public WebElement rememberMeCheckbox;
 
@@ -108,6 +112,7 @@ public class UserLoginPage {
         JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
         jse.executeScript("arguments[0].scrollIntoView();",locate);
     }
+
 
 
 
