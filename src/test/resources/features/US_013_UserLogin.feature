@@ -1,3 +1,4 @@
+@wip1
 Feature: US_013 Kayıtlı bir kullanıcı(User) olarak kendime ait panele login olabilmek için anasayfadan login sayfasına eişimin olmasını istiyorum.
 
   @HomePageLoginButtonVisibility
