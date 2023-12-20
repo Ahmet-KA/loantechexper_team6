@@ -186,6 +186,30 @@ public class ReusableMethods {
         });
         return element;
     }
+
+
+    // JavaScriptExecutor kullanıp sayfayı kaydırarak bir WebElement'in görünür olmasını sağlar
+    public static void goruneneKadarKaydir(WebElement webElement) {
+
+        // Scroll işlemi için JavaScriptExecutor kullan
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("arguments[0].scrollIntoView(true);", webElement);
+        bekle(1);
+    }
+
+    // Belirtilen WebElement üzerinde JavaScript ile kaydırma yaparak tıklama işlemi yapar.
+    public static void goruneneKadarKaydirTikla(WebElement webElement) {
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", webElement);
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", webElement);
+
+    }
+
+    public static void clickWithJS(WebElement element) {
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", element);
+    }
+
+
 }
 
 
