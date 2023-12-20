@@ -100,6 +100,11 @@ public class AdminDepositsPage {
     public WebElement actionBaslik;
     @FindBy(xpath = "//*[@class='btn btn-sm btn-outline--primary ms-1']")
     public WebElement detailsButon;
+    @FindBy(xpath = "//span[text()='All Deposits']")
+    public WebElement allDepositsBaslik;
+    @FindBy(xpath = "(//*[@class='menu-title'])[26]")
+    public WebElement approvedDepositsBaslik;
+
 
 
 

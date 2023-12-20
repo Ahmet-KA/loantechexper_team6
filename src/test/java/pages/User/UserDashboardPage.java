@@ -14,4 +14,8 @@ public class UserDashboardPage {
 
     @FindBy(xpath = "//*[text()='Change Password']")
     WebElement changePasswordButonu;
+
+    @FindBy(xpath = "//a[@href='https://qa.loantechexper.com/user/loan/plans']")
+    WebElement TakeLoanlink;
+
 }
