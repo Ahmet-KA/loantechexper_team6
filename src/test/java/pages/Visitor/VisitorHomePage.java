@@ -29,7 +29,7 @@ public class VisitorHomePage {
     public WebElement facebookIcon;
 
     @FindBy (xpath = "//*[@class='fab fa-twitter']")
-    public WebElement twitterIcon;
+    public WebElement XIcon;
 
     @FindBy (xpath = "//*[@class='fab fa-instagram']")
     public WebElement instagramIcon;
