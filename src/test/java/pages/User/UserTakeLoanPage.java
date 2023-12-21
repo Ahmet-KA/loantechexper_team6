@@ -58,5 +58,8 @@ public class UserTakeLoanPage {
     @FindBy(xpath = "//*[@id='status']")
     WebElement RunningYazisi;
 
+    @FindBy(xpath = "//*[@class='value']")
+    WebElement InstallmentsButton;
+
 
 }

@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 import java.util.Set;
 
@@ -29,7 +30,7 @@ public class VisitorHomePage {
     public WebElement facebookIcon;
 
     @FindBy (xpath = "//*[@class='fab fa-twitter']")
-    public WebElement twitterIcon;
+    public WebElement XIcon;
 
     @FindBy (xpath = "//*[@class='fab fa-instagram']")
     public WebElement instagramIcon;
@@ -147,8 +148,8 @@ public class VisitorHomePage {
                 newWHD=each;}
         Driver.getDriver().switchTo().window(newWHD);
     }
-
-
+    @FindBy (xpath = "//a[contains(@href,'https://www.google.com')]")
+    public WebElement googleIcon;
 
     //afife>>>>>>>userhomepage
 
@@ -206,6 +207,18 @@ public class VisitorHomePage {
         Assert.assertTrue(getStartedDayfa.isDisplayed());
 
 
+    }
+
+    public void navbarİsDisplaed(){
+
+        Assert.assertTrue(homeButon.isDisplayed());
+        Assert.assertTrue(aboutButon.isDisplayed());
+        Assert.assertTrue(plansButon.isDisplayed());
+        Assert.assertTrue(blogButon.isDisplayed());
+        Assert.assertTrue(contactButon.isDisplayed());
+        Assert.assertTrue(loginButon.isDisplayed());
+        Assert.assertTrue(getStartedButton.isDisplayed());
+        ReusableMethods.bekle(1);
     }
 
 }

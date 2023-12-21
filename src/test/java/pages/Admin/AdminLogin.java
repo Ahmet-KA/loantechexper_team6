@@ -28,6 +28,8 @@ public class AdminLogin {
 
 
 
+
+
     public void adminLoginGirisYap(String adminname,String adminPassword){
         usernameTextBox.sendKeys(adminname);
         passwordTextBox.sendKeys(adminPassword);
