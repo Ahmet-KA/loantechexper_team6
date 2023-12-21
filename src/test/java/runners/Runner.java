@@ -4,8 +4,6 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
-import javax.swing.plaf.TreeUI;
-
 @RunWith(Cucumber.class)
 @CucumberOptions(
         plugin = {"html:target/cucumber-reports.html",
@@ -13,8 +11,11 @@ import javax.swing.plaf.TreeUI;
                 "junit:target/xml-report/cucumber.xml"},
         features = "src/test/resources",
         glue = "stepdefinitions",
-        tags = "@US_021",
+        tags = "",
         dryRun = false
+
+
+
 )
 public class Runner {
     /*
@@ -33,3 +34,4 @@ public class Runner {
         dryRun = false secilmelidir
          */
 }
+

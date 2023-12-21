@@ -30,7 +30,7 @@ public class VisitorHomePage {
     public WebElement facebookIcon;
 
     @FindBy (xpath = "//*[@class='fab fa-twitter']")
-    public WebElement twitterIcon;
+    public WebElement XIcon;
 
     @FindBy (xpath = "//*[@class='fab fa-instagram']")
     public WebElement instagramIcon;
@@ -148,8 +148,8 @@ public class VisitorHomePage {
                 newWHD=each;}
         Driver.getDriver().switchTo().window(newWHD);
     }
-
-
+    @FindBy (xpath = "//a[contains(@href,'https://www.google.com')]")
+    public WebElement googleIcon;
 
     //afife>>>>>>>userhomepage
 
