@@ -18,7 +18,7 @@ public class US_22_LogoutTest {
 
     @Given("Kullanici loantechUrl anasayfasina gider")
     public void kullanici_loantech_url_anasayfasina_gider() {
-        Driver.getDriver().get(ConfigReader.getProperty("loantechUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("url"));
         ReusableMethods.bekle(2);
     }
     @Given("Kullanici login butonuna tiklar")
