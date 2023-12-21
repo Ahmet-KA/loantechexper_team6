@@ -1,4 +1,4 @@
-package stepdefinitions.user;
+package stepdefinitions.User;
 
 import io.cucumber.java.en.Given;
 import org.openqa.selenium.support.ui.Select;
