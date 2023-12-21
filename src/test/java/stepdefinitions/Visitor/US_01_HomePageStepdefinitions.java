@@ -130,6 +130,8 @@ public class US_01_HomePageStepdefinitions {
         } catch (NoSuchElementException e) {
             System.out.println("Google icon sayfada bulunamadı");
         }
+
+
     }
     @Given("Google iconuna tiklar")
     public void google_iconuna_tiklar()  {
