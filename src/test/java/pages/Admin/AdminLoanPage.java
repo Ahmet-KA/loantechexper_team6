@@ -28,6 +28,13 @@ public class AdminLoanPage {
     public WebElement loansMenuRejectedLoansElement;
     @FindBy(xpath = "//span[text()=\"All Loans\"]")
     public WebElement loansMenuAllLoansElement;
+    @FindBy(xpath = "//h6[text()='Due Installment Loans']")
+    public WebElement dueLoansPage;
+    @FindBy(xpath = "//div[@class='card b-radius--10']")
+    public WebElement dueInstallmentLoansTablosu;
+    @FindBy(xpath = "//*[text()='Data not found']")
+    public WebElement dataNotFoundElement;
+
 
 
 

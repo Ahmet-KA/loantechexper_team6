@@ -1,10 +1,17 @@
 package pages.Visitor;
 
+import com.github.javafaker.Faker;
 import org.junit.Assert;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.JSUtilities;
+import utilities.ReusableMethods;
 
 public class VisitorHomePage {
 
@@ -16,7 +23,7 @@ public class VisitorHomePage {
     @FindBy(xpath = "//a[@class='btn btn--base btn--xl w-100 policy']")
     public WebElement allowCookies;
 
-    @FindBy(xpath = "//*[@class='hero__content-title text-capitalize t-text-white']")
+    @FindBy(xpath = "//a[@class='btn btn--xl xl-text btn--base btn--outline mt-3']")
     public WebElement getStartedButton;
 
     @FindBy (xpath = "//h4[text()='About Loantech']")
@@ -89,7 +96,7 @@ public class VisitorHomePage {
     public WebElement getStartedDayfa;
     @FindBy (xpath = "//div[@class='auth-form__content']")
     public WebElement kayitFormu;
-    @FindBy (xpath = "//*[@name='username']")
+    @FindBy (xpath = "//*[@id='username']")
     public WebElement username;
     @FindBy (xpath = "//input[@*='Email Address']")
     public WebElement email;
@@ -103,12 +110,14 @@ public class VisitorHomePage {
     public WebElement gizlemeButonu;
     @FindBy (xpath = "//*[@name='password_confirmation']")
     public WebElement confirmPassword;
-    @FindBy (xpath = "//input[@type='checkbox']")
+    @FindBy (xpath = "//*[@id='agree']")
     public WebElement ıAgreeCheckBox;
     @FindBy (xpath = "//*[@class='btn btn--base btn--xxl w-100 text-capitalize xl-text']")
     public WebElement registerButon;
     @FindBy (xpath = "//h2[@class='hero__content-title text-capitalize t-text-white']")
     public WebElement userDataSayfa;
+    @FindBy (xpath = "//div[@class='card-body']")
+    public WebElement userDataFormu;
     @FindBy (xpath = "//*[@name='firstname']")
     public WebElement firstNameUserButon;
     @FindBy (xpath = "//*[@name='lastname']")
@@ -123,8 +132,10 @@ public class VisitorHomePage {
     public WebElement cityButon;
     @FindBy (xpath = "//*[@class='btn btn--base btn--xxl w-100 text-capitalize xl-text']")
     public WebElement submitButon;
-    @FindBy (xpath = "")
+    @FindBy (xpath = "//*[text()='Registration process completed successfully']")
     public WebElement successfulNotu;
+    @FindBy (xpath = "//*[@class='iziToast-message slideIn']")
+    public WebElement successfulMesaj;
 
 
 
@@ -172,6 +183,44 @@ public class VisitorHomePage {
         getStartedButton.click();
         Assert.assertTrue(getStartedDayfa.isDisplayed());
 
+
+    }
+
+    public void registerFormuisDisplayedTest(){
+         username.isDisplayed();
+         username.isEnabled();
+         email.isEnabled();
+         email.isDisplayed();
+         country.isEnabled();
+         country.isDisplayed();
+         mobileNumber.isEnabled();
+         mobileNumber.isDisplayed();
+         password.isEnabled();
+         password.isDisplayed();
+         ıAgreeCheckBox.isDisplayed();
+         ıAgreeCheckBox.isEnabled();
+        gizlemeButonu.isDisplayed();
+        gizlemeButonu.isEnabled();
+
+    }
+
+    public void kayitFormVeriGirisiTest(){
+
+        Faker faker = new Faker();
+        Actions actions = new Actions(Driver.getDriver());
+        ReusableMethods.bekle(2);
+        String name = faker.name().username();
+        name = name.replaceAll("\\W", "");
+        ReusableMethods.bekle(1);
+        actions.click(username).sendKeys(name).sendKeys(Keys.TAB)
+                        .sendKeys(faker.internet().emailAddress()).sendKeys(Keys.TAB).sendKeys(Keys.TAB)
+                                .sendKeys(faker.phoneNumber().subscriberNumber(10)).sendKeys(Keys.TAB)
+                .sendKeys(ConfigReader.getProperty("smyyenikayitpassword")).sendKeys(Keys.TAB)
+                .sendKeys(ConfigReader.getProperty("smyyenikayitpassword")).sendKeys(Keys.TAB).sendKeys(Keys.SPACE).perform();
+
+        ReusableMethods.bekle(1);
+        registerButon.click();
+        ReusableMethods.bekle(5);
 
     }
 }
