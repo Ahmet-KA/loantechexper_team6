@@ -69,9 +69,45 @@ public class US_029_Admin_Rejected_Loan {
         adminLoanPage.rejectedLoanDetailsChartStatus.isDisplayed();
         adminLoanPage.rejectedLoanDetailsChartTotalIns.isDisplayed();
         adminLoanPage.rejectedLoanDetailsChartTotalPay.isDisplayed();
+    }
+
+    @Given("kullanici kredi formu statusu goruntulenir")
+    public void kullanici_kredi_formu_statusu_goruntulenir() {
+
+        adminLoanPage.rejectedLoanstatusrapor.isDisplayed();
+    }
+
+    @Given("Installment butonuna tiklanir")
+    public void ınstallment_butonuna_tiklanir() {
+        adminLoanPage.adminPanelRejectedLoansLinki.click();
+        adminLoanPage.rejectedLoanInstallmentButton.click();
+    }
+    @Given("Loan Number, Plan, Loan Amount,Per Installment, Total Installment, Given Installment,  Receivable, Delay Charge gorulur")
+    public void loan_number_plan_loan_amount_per_ınstallment_total_ınstallment_given_ınstallment_receivable_delay_charge_gorulur() {
 
 
+        adminLoanPage.InstallmentSumLoanNumber.isDisplayed();
+        adminLoanPage.InstallmentSumPlan.isDisplayed();
+        adminLoanPage.InstallmentSumLoanAmount.isDisplayed();
+        adminLoanPage.InstallmentSumPerIns.isDisplayed();
+        adminLoanPage.InstallmentSumTotalIns.isDisplayed();
+        adminLoanPage.InstallmentSumReceivable.isDisplayed();
+    }
+    @Given("S.N., Installment Date, Given On, Delay, Charge bilgileri ile goruntulenir")
+    public void s_n_ınstallment_date_given_on_delay_charge_bilgileri_ile_goruntulenir() {
+       adminLoanPage.InstallmentsSn.isDisplayed();
+       adminLoanPage.InstallmentsInsDate.isDisplayed();
+       adminLoanPage.InstallmentsGivenOn.isDisplayed();
+       adminLoanPage.InstallmentsDelay.isDisplayed();
+       adminLoanPage.InstallmentsCharge.isDisplayed();
 
     }
+    @Given("Rejected Loans sayfasina donus yapilir")
+    public void rejected_loans_sayfasina_donus_yapilir() {
+
+        Driver.getDriver().navigate().back();
+        adminLoanPage.adminPanelRejectedLoansYazisi.isDisplayed();
+    }
+
 
 }

@@ -1,3 +1,4 @@
+@win55
 Feature:Loans menu basligi altindaki "Rejected Loans" sayfa linkine tiklandiginda
   "Rejected Loans" sayfasina erisilmelidir.
 
@@ -44,4 +45,32 @@ Feature:Loans menu basligi altindaki "Rejected Loans" sayfa linkine tiklandigind
         * adminUrl sayfasina  gidilir
         * Rejected Loan sayfa linkine tiklanir  ve Reject Loans sayfasi goruntulenir
         * details butonuna tıklanir details chart gorulur
-        *
+        * kullanici kredi formu statusu goruntulenir
+        * sayfayi kapatir
+
+  Scenario: Installments sayfasinda Loan summary bilgileri (Loan Number, Plan, Loan Amount,
+  Per Installment, Total Installment, Given Installment,  Receivable, Delay Charge) goruntulenmelidir.
+
+        * adminUrl sayfasina  gidilir
+        * Rejected Loan sayfa linkine tiklanir  ve Reject Loans sayfasi goruntulenir
+        * Installment butonuna tiklanir
+        * Loan Number, Plan, Loan Amount,Per Installment, Total Installment, Given Installment,  Receivable, Delay Charge gorulur
+
+    Scenario: Installments sayfasinda taksitler S.N., Installment Date, Given On, Delay, Charge bilgileri ile goruntulenmelidir.
+
+        * adminUrl sayfasina  gidilir
+        * Rejected Loan sayfa linkine tiklanir  ve Reject Loans sayfasi goruntulenir
+        * Installment butonuna tiklanir
+        * S.N., Installment Date, Given On, Delay, Charge bilgileri ile goruntulenir
+      * sayfayi kapatir
+
+      Scenario: Installments sayfasindan Rejected Loans sayfasina donus yapilabilmelidir.
+
+        * adminUrl sayfasina  gidilir
+        * Rejected Loan sayfa linkine tiklanir  ve Reject Loans sayfasi goruntulenir
+        * Installment butonuna tiklanir
+        * Rejected Loans sayfasina donus yapilir
+        * sayfayi kapatir
+
+
+
