@@ -10,8 +10,14 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.ConfigReader;
 import utilities.Driver;
+
 import utilities.JSUtilities;
 import utilities.ReusableMethods;
+
+import utilities.ReusableMethods;
+
+import java.util.Set;
+
 
 public class VisitorHomePage {
 
@@ -33,7 +39,7 @@ public class VisitorHomePage {
     public WebElement facebookIcon;
 
     @FindBy (xpath = "//*[@class='fab fa-twitter']")
-    public WebElement twitterIcon;
+    public WebElement XIcon;
 
     @FindBy (xpath = "//*[@class='fab fa-instagram']")
     public WebElement instagramIcon;
@@ -132,6 +138,39 @@ public class VisitorHomePage {
     public WebElement cityButon;
     @FindBy (xpath = "//*[@class='btn btn--base btn--xxl w-100 text-capitalize xl-text']")
     public WebElement submitButon;
+
+
+
+
+
+
+    //afife<<<< userhomepage
+    @FindBy (xpath = "//*[@class='img-fluid logo__is']")
+    public WebElement loanTechLogo;
+
+    @FindBy(xpath = "//*[@class='footer-copyright']")
+    public WebElement footerCopyright;
+    @FindBy (xpath = "//*[@aria-label='Instagram']")
+    public WebElement instagramHomePageLogo;
+
+    public void switchWindow(){
+        String homeNWD=Driver.getDriver().getWindowHandle();
+        Set<String> whdSeti=Driver.getDriver().getWindowHandles();
+        String newWHD="";
+        for (String each:whdSeti) {
+            if (!each.equals(homeNWD))
+                newWHD=each;}
+        Driver.getDriver().switchTo().window(newWHD);
+    }
+    @FindBy (xpath = "//a[contains(@href,'https://www.google.com')]")
+    public WebElement googleIcon;
+
+    //afife>>>>>>>userhomepage
+
+
+
+
+
     @FindBy (xpath = "//*[text()='Registration process completed successfully']")
     public WebElement successfulNotu;
     @FindBy (xpath = "//*[@class='iziToast-message slideIn']")
@@ -186,6 +225,7 @@ public class VisitorHomePage {
 
     }
 
+
     public void registerFormuisDisplayedTest(){
          username.isDisplayed();
          username.isEnabled();
@@ -223,4 +263,18 @@ public class VisitorHomePage {
         ReusableMethods.bekle(5);
 
     }
+
+    public void navbarİsDisplaed(){
+
+        Assert.assertTrue(homeButon.isDisplayed());
+        Assert.assertTrue(aboutButon.isDisplayed());
+        Assert.assertTrue(plansButon.isDisplayed());
+        Assert.assertTrue(blogButon.isDisplayed());
+        Assert.assertTrue(contactButon.isDisplayed());
+        Assert.assertTrue(loginButon.isDisplayed());
+        Assert.assertTrue(getStartedButton.isDisplayed());
+        ReusableMethods.bekle(1);
+    }
+
+
 }

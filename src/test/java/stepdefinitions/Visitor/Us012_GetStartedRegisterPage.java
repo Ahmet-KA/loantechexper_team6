@@ -101,7 +101,7 @@ public class Us012_GetStartedRegisterPage {
     @Given("Kayit basarili mesaji goruntulenir")
     public void kayit_basarili_mesaji_goruntulenir() {
 
-        visitorHomePage.successfulNotu.isDisplayed();
+        Assert.assertTrue(visitorHomePage.successfulNotu.isDisplayed());
 
     }
 

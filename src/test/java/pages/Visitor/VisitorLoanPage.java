@@ -12,16 +12,18 @@ public class VisitorLoanPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
+    public static String unExpectedUrl = "https://qa.loantechexper.com/loan";
 
     //BASIC LOAN ELEMENTLERİ -VISITOR  ---Murat
     @FindBy(xpath = "//button[@id=\"pills-basic-loan-tab\"]")
-    public WebElement basicLoanButtonElement;
-    @FindBy(xpath = "(//button[text()=\"Apply Now                                        \"])[3]")
-    public WebElement basicLoanApplyNowButtonElement;
-    @FindBy(xpath = "(//div[@class=\"plan-card-header-body\"])[3]")
-    public WebElement basicLoanPlanCardBodyElement;
+    public  WebElement basicLoanButtonElement;
+    @FindBy(xpath = "//*[@id=\"pills-basic-loan\"]/div/div[2]/div/div[2]/button")
+    public  WebElement basicLoanApplyNowButtonElement;
+    @FindBy(xpath = "(//ul[@class=\"plan-feature-list\"])[7]")
+    public  WebElement basicLoanPlanCardBodyElement;
     @FindBy(xpath = "//button[@aria-label=\"Close\"]")
-    public WebElement notLoggedCloseElement; //you are not looed in! sayfasındaki close
+    public  WebElement notLoggedCloseElement; //you are not looed in! sayfasındaki close
     @FindBy(xpath = "//i[@aria-hidden=\"true\"]")
-    public WebElement applyNowAktiveXElement; //you are not looed in! sayfasındaki X
+    public  WebElement applyNowAktiveXElement; //you are not looed in! sayfasındaki X
+
 }

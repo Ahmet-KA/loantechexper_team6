@@ -13,6 +13,7 @@ public class AdminLoanPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
+
     // LOANS MENU ELEMENTLERİ  -Admin----Murat
     @FindBy(xpath = "//div[2]/div[1]/ul/li[5]/a")
     public WebElement adminPanelLoansElement;
@@ -34,6 +35,8 @@ public class AdminLoanPage {
     public WebElement dueInstallmentLoansTablosu;
     @FindBy(xpath = "//*[text()='Data not found']")
     public WebElement dataNotFoundElement;
+
+
 
 
 
