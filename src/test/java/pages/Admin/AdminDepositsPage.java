@@ -99,7 +99,7 @@ public class AdminDepositsPage {
     public WebElement statusBaslik;
     @FindBy (xpath = "//th[text()='Action']")
     public WebElement actionBaslik;
-    @FindBy(xpath = "//a[@*='https://qa.loantechexper.com/admin/deposit/details/112']")
+    @FindBy(xpath = "//a[@*='btn btn-sm btn-outline--primary ms-1']")
     public WebElement detailsButon;
 
     @FindBy(xpath = "//span[text()='All Deposits']")

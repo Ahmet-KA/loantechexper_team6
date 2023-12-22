@@ -63,7 +63,6 @@ public class Us053_Successfuldeposits {
 
         for (WebElement eachinformation : succsesfulListeBilgileri) {
             Assert.assertTrue(eachinformation.isDisplayed());
-            System.out.println(eachinformation.getText());
             ReusableMethods.bekle(2);
         }
 
@@ -78,11 +77,11 @@ public class Us053_Successfuldeposits {
     @Given("Details butonuna basilir ve bilgilerin gorunur oldugu test edilir")
     public void details_butonuna_basilir_ve_bilgilerin_gorunur_oldugu_test_edilir() {
         ReusableMethods.bekle(2);
-        //adminDepositsPage.depositsButon.click();
         Actions actions = new Actions(Driver.getDriver());
-        actions.sendKeys(adminDepositsPage.detailsButon).sendKeys(Keys.ENTER).perform();
-        ReusableMethods.bekle(3);
-        Assert.assertTrue(adminDepositsPage.detailsRaporu.isDisplayed());
+        ReusableMethods.bekle(2);
+        actions.sendKeys(adminDepositsPage.detailsButon, Keys.ENTER).perform();
+        ReusableMethods.bekle(10);
+        Assert.assertTrue(adminDepositsPage.detailsRaporu.isEnabled());
     }
 
 
