@@ -7,7 +7,7 @@
       * Kullanici Deposit Methods sayfasina gider
       * Select Gateway dropdown menusunden "Manual" secer
       * Amount textbox'ina "enterAmount" girer
-      * Submit butonuna tiklar
+      * Submit butonu tiklar
       * 'You have requested 'enterAmount' USD , Please pay 'payable' USD for successful payment' yazisinin goruldugunu dogrular
       * Sayfayi kapatir
 
