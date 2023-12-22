@@ -21,6 +21,8 @@ public class UserTransactionPage {
     public WebElement transactionNumberYazisi;
     @FindBy (xpath = "//div[@class='custom-input-box trx-search']")
     public WebElement transactionNumberSearchBox;
+    @FindBy(xpath = "//i[@class='las la-search']")
+    public WebElement searchBoxArama;
     @FindBy (xpath = "//*[text()='Type']")
     public WebElement typeYazisi;
     @FindBy (xpath = "(//div[@class='custom-input-box'])[1]")
@@ -44,4 +46,37 @@ public class UserTransactionPage {
     public WebElement postBalanceYazisi;
     @FindBy (xpath = "(//span[@class='caption'])[3]")
     public WebElement detailsYazisi;
+    @FindBy(xpath = "//*[text()='All']")
+    public WebElement dropdownAllYazisi;
+    @FindBy(xpath = "//select[@name='trx_type']")
+    public WebElement typeDropdownMenu;
+    @FindBy(xpath = "//select[@name='remark']")
+    public WebElement remarkDropdownMenu;
+    @FindBy(xpath = "//*[text()='Minus']")
+    public WebElement dropdownMinusYazisi;
+    @FindBy(xpath = "//*[text()='Plus']")
+    public WebElement dropdownPlusYazisi;
+    @FindBy(xpath = "//*[text()='Any']")
+    public WebElement dropdownAnyYazisi;
+    @FindBy(xpath = "//*[text()='Balance add']")
+    public WebElement dropdownBalanceAddYazisi;
+    @FindBy(xpath = "//*[text()='Application fee']")
+    public WebElement dropdownApplicationFeeYazisi;
+    @FindBy(xpath = "//*[text()='Deposit']")
+    public WebElement dropdownDepositYazisi;
+    @FindBy(xpath = "//*[text()='Withdraw']")
+    public WebElement dropdownWithdrawYazisi;
+    @FindBy(xpath = "//*[text()='Withdraw reject']")
+    public WebElement dropdownWithdrawRejectYazisi;
+    @FindBy(xpath = "//button[@class='accordion-button collapsed']")
+    public WebElement filtreSonucuSayfa;
+    @FindBy(xpath = "//select[@name='trx_type']")
+    public WebElement transactionsAllYazisi;
+    @FindBy(xpath = "//select[@name='remark']")
+    public WebElement transactionsAnyYazisi;
+
+
+
+
+
 }

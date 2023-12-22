@@ -50,6 +50,7 @@ public class US_016_UserDepositPageSteps {
 
     @Given("Kullanici Deposit Methods sayfasina gider")
     public void kullanici_deposit_methods_sayfasina_gider() {
+
         depositPage.dashboardDepositMenuButtonElement.click();
     }
 
@@ -82,7 +83,6 @@ public class US_016_UserDepositPageSteps {
         assertTrue(depositPage.accordionTableElement.isDisplayed());
     }
 
-    //==================================================
 
     @Given("Select Gateway dropdown menusunden {string} secer")
     public void select_gateway_dropdown_menusunden_manual_i_secer(String optionText) {
