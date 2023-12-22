@@ -159,8 +159,8 @@ public class US_40_AdminWithdrawTest {
 
     }
 
-    @And("Submit butonuna tiklar")
-    public void submitButonunaTiklar() {
+    @And("Reject submit butonuna tiklar")
+    public void rejectsubmitButonunaTiklar() {
         adminWithdrawalsPage.reasonSubmitButton.click();
     }
 
