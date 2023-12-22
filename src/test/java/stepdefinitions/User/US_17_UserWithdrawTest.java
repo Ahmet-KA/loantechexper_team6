@@ -41,17 +41,20 @@ public class US_17_UserWithdrawTest {
     @And("amount box'a {string} arasinda bir deger girer")
     public void amountBoxAArasindaBirDegerGirer(String arg0) {
         userWithdrawPage.amountBox.sendKeys("500");
+        ReusableMethods.bekle(1);
     }
 
     @Then("submit butonuna basar")
     public void submitButonunaBasar() {
         userWithdrawPage.submitButton.click();
+        ReusableMethods.bekle(1);
         Assert.assertTrue(userWithdrawPage.withdrawTextBox.isDisplayed());
     }
 
     @Then("tekrar submit butonuna basar")
     public void tekrarSubmitButonunaBasar() {
         userWithdrawPage.submitButton.click();
+        ReusableMethods.bekle(1);
         Assert.assertTrue(adminWithdrawalsPage.confirmationAlertBox.isDisplayed());
     }
 
@@ -65,6 +68,7 @@ public class US_17_UserWithdrawTest {
     @And("accordion table a tiklar ve detaylari gorur")
     public void accordionTableATiklarVeDetaylariGorur() {
         userWithdrawPage.withdrawAccordion.click();
+        ReusableMethods.bekle(2);
         Assert.assertTrue(userWithdrawPage.accordionCharge.isDisplayed());
         Assert.assertTrue(userWithdrawPage.accordionAfterCharge.isDisplayed());
         Assert.assertTrue(userWithdrawPage.accordionConversion.isDisplayed());
@@ -83,6 +87,7 @@ public class US_17_UserWithdrawTest {
         ReusableMethods.bekle(1);
         Assert.assertTrue(userWithdrawPage.withdrawMoneyButton.isDisplayed());
         userWithdrawPage.withdrawMoneyButton.click();
+        ReusableMethods.bekle(1);
 
     }
 }

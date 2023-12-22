@@ -143,7 +143,7 @@ Feature: US0040 Kullanici Loantechexperdaki yonetici panelinde kullanicilarin od
     And details butonuna tiklar ve detay sayfasini acar
     And Reject butonuna tiklar
     And Gerekli bilgileri girer
-    And Submit butonuna tiklar
+    And Reject submit butonuna tiklar
     And Withdrawal Rejected Successfully yazisini goruntuler
     Then kullanici sayfayi kapatir
 

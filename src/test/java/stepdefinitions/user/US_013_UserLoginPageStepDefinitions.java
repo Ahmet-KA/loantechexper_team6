@@ -94,7 +94,7 @@ public class US_013_UserLoginPageStepDefinitions {
 
     @Given("Anasayfada login button tıklanır")
     public void anasayfada_login_button_tıklanır() {
-
+        ReusableMethods.bekle(1);
         visitorHomePage.loginButon.click();
     }
     @Given("Açılan login sayfasında kayıtlı {string} ve {string} girilir.")
