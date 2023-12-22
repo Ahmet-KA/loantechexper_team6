@@ -37,6 +37,7 @@ public class US_01_HomePageStepdefinitions {
     @Then("sayfayi kapatir")
     public void sayfayi_kapatir() {
         Driver.closeDriver();
+        ReusableMethods.bekle(1);
     }
     @Given("sayfalari kapatir")
     public void sayfalari_kapatir() {
