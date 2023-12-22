@@ -122,8 +122,8 @@ public class US_016_UserDepositPageSteps {
         depositPage.amountBoxElement.sendKeys(ConfigReader.getProperty(enterAmount));
     }
 
-    @Given("Submit butonuna tiklar")
-    public void submit_butonuna_tiklar() {
+    @Given("Submit butonu tiklar")
+    public void submit_butonu_tiklar() {
         depositPage.submitButtonElement.click();
     }
 
