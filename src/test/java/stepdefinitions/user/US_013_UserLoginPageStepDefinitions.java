@@ -94,7 +94,7 @@ public class US_013_UserLoginPageStepDefinitions {
 
     @Given("Anasayfada login button tıklanır")
     public void anasayfada_login_button_tıklanır() {
-
+        ReusableMethods.bekle(1);
         visitorHomePage.loginButon.click();
     }
     @Given("Açılan login sayfasında kayıtlı {string} ve {string} girilir.")
@@ -128,6 +128,7 @@ public class US_013_UserLoginPageStepDefinitions {
     @Given("These credentials do not match our records. uyarısının alındıgı doğrulanır")
     public void these_credentials_do_not_match_our_records_uyarısının_alındıgı_doğrulanır() {
 
+        ReusableMethods.bekle(1);
         Assert.assertTrue(userLoginPage.hataliLoginGirişUyarisi.isDisplayed());
     }
 

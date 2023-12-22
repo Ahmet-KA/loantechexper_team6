@@ -20,9 +20,6 @@ public class US_016_UserDepositPageSteps {
     static UserDashboardPage dashboardPage = new UserDashboardPage();
 
 
-
-
-
     static Select gatewayDropdown;
 
 
@@ -30,23 +27,6 @@ public class US_016_UserDepositPageSteps {
         bekle(2);
         loginPage.allowCookies.click();
     }
-
-    /*  public static void enteredAmount(String userNameMrt, String userPassword,String selectOptionText) {
-          kullanici_anasayfaya_gider_ve_ile_login_olur
-                  (ConfigReader.getProperty(userNameMrt), ConfigReader.getProperty(userPassword));
-          //    * Dashboard sayfasinda Deposit butonuna tikla
-          depositPage.dashboardDepositMenuButtonElement.click();
-          //    * Select Gateway dropdown menusunden Manual'i secer
-          gatewayDropdown.selectByVisibleText(selectOptionText);
-          //    * Deposit Methods sayfasinda Amount textbox'ina "enterAmount" girer
-          depositPage.amountBoxElement.sendKeys(ConfigReader.getProperty("enterAmount"));
-      }
-        public static String payableAmount(String deger) {
-        double enterAmount = Double.parseDouble(deger);
-        return "" + (enterAmount * 1.22);
-    }
-
-   */
 
 
     @Given("Kullanici anasayfaya gider {string} ve {string} ile login olur")
@@ -59,6 +39,7 @@ public class US_016_UserDepositPageSteps {
         loginPage.userNameTextBox.sendKeys(ConfigReader.getProperty(userNameMrt));
         loginPage.userPasswordTextBox.sendKeys(ConfigReader.getProperty(userPassword));
         loginPage.loginButton.click();
+        bekle(2);
     }
 
     @Given("Dashboard sayfasinda Deposit butonu bulundugunu dogrular")  // US_16 TC_01
@@ -122,8 +103,8 @@ public class US_016_UserDepositPageSteps {
         depositPage.amountBoxElement.sendKeys(ConfigReader.getProperty(enterAmount));
     }
 
-    @Given("Submit butonuna tiklar")
-    public void submit_butonuna_tiklar() {
+    @Given("Submit butonu tiklar")
+    public void submit_butonu_tiklar() {
         depositPage.submitButtonElement.click();
     }
 
