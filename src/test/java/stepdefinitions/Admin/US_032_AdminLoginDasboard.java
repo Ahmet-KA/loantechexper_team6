@@ -8,11 +8,7 @@ import utilities.Driver;
 public class US_032_AdminLoginDasboard {
     AdminLogin adminLogin=new AdminLogin();
 
-    @Given("Admin kullanıcı olarak {string} adresine gidilir.")
-    public void admin_kullanıcı_olarak_adresine_gidilir(String adminUrl) {
-        Driver.getDriver().get(ConfigReader.getProperty(adminUrl));
 
-    }
 
     @Given("Sayfada username,password checkbox'ları ve login butonu görüntülenir")
     public void sayfada_username_password_checkbox_ları_ve_login_butonu_görüntülenir() {

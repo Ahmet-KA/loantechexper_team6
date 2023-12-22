@@ -27,7 +27,7 @@ public class US_019_UserTransactionsPageStep {
         ReusableMethods.clickWithJS(loginPage.allowCookies);
     }
 
-    @Given("Kullanici anasayfaya gider {string} ve {string} ile login olur")
+    /*@Given("Kullanici anasayfaya gider {string} ve {string} ile login olur")
     public void kullanici_anasayfaya_gider_ve_ile_login_olur(String userNameRcr, String userPassword) {
         ReusableMethods.bekle(1);
         Driver.getDriver().get(ConfigReader.getProperty("url"));
@@ -39,6 +39,8 @@ public class US_019_UserTransactionsPageStep {
         loginPage.userPasswordTextBox.sendKeys(ConfigReader.getProperty(userPassword));
         loginPage.loginButton.click();
     }
+
+     */
     @Given("Dasboard sayfasinda Transactions linki gorulur ve aktifligini dogrular")
     public void dasboard_sayfasinda_transactions_linki_gorulur_ve_aktifligini_dogrular() {
         waitForPageToLoad(5);

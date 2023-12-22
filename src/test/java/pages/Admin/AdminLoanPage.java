@@ -43,6 +43,43 @@ public class AdminLoanPage {
     public WebElement rejectedLoanfiltreSearch;
     @FindBy(xpath = "//div[@class='col-lg-12']")
     public WebElement rejectedLoanfiltreSonucSayfasi;
+    @FindBy(xpath = "//span[@class='badge badge--danger']")
+    public WebElement rejectedLoanstatusrapor;
+    @FindBy(xpath = "//span[text()='Loan Number']")
+    public WebElement InstallmentSumLoanNumber;
+    @FindBy(xpath = "//span[text()='Plan']")
+    public WebElement InstallmentSumPlan;
+    @FindBy(xpath = "//span[text()='Loan Amount']")
+    public WebElement InstallmentSumLoanAmount;
+    @FindBy(xpath = "//span[text()='Per Installment']")
+    public WebElement InstallmentSumPerIns;
+    @FindBy(xpath = "//span[text()='Total Installment']")
+    public WebElement InstallmentSumTotalIns;
+    @FindBy(xpath = "//span[text()='Given Installment']")
+    public WebElement InstallmentSumGivenIns;
+    @FindBy(xpath = "//span[text()='Receivable']")
+    public WebElement InstallmentSumReceivable;
+    @FindBy(xpath = "//span[text()='Delay Charge']")
+    public WebElement InstallmentSumDelayCharge;
+    @FindBy(xpath = "//th[text()='S.N.']")
+    public WebElement InstallmentsSn;
+    @FindBy(xpath = "//th[text()='Installment Date']")
+    public WebElement InstallmentsInsDate;
+    @FindBy(xpath = "//th[text()='Given On']")
+    public WebElement InstallmentsGivenOn;
+    @FindBy(xpath = "//th[text()='Delay']")
+    public WebElement InstallmentsDelay;
+    @FindBy(xpath = "//th[text()='Charge']")
+    public WebElement InstallmentsCharge;
+
+
+
+
+
+
+    //span[text()='Loan Number']
+
+    //span[@class='badge badge--dark']
 
     @FindBy(xpath = "(//a[@class='btn btn-sm btn-outline--primary'])[1]")
     public WebElement rejectedLoanDetailsButton;
