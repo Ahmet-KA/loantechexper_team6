@@ -1,0 +1,1 @@
+{"uuid":"091900e5-b741-484b-a661-781354fc7e39","name":"Scenario: Subtract Balance Sayfadaki 'Submit Buton' görünür ve aktif olmalıdır.Tıklandığında '$x subtracted successfully' yazısı görüntülenebilmelidir.","children":["3e43a80f-997f-4947-bb7e-8ff215f701ce"],"befores":[],"afters":[],"start":1703235670602,"stop":1703235685292}
