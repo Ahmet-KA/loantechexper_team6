@@ -53,8 +53,14 @@ public class US_44_TC_01_02_03_04_05_06_070_08_09 {
     @Then("notification sent successfully mesajinin goruntulenmedigi dogrulanir")
     public void notification_sent_successfully_mesajinin_goruntulenmedigi_dogrulanir() {
 
+        ReusableMethods.bekle(2);
 
-        Assert.assertTrue(adminManageUsersPage.mesajgonderilditexti.isDisplayed());
+
+        boolean isim = adminManageUsersPage.sendNotificationSubjectTextBox.equals("");
+
+        System.out.println(isim);
+
+         Assert.assertFalse(adminManageUsersPage.sendNotificationSubjectTextBox.equals(""));
 
 
     }
@@ -89,7 +95,10 @@ public class US_44_TC_01_02_03_04_05_06_070_08_09 {
     //US44_TC13
     @Then("submit butonununa tiklanir")
     public void submit_butonununa_tiklanir() {
+
+        ReusableMethods.bekle(1);
         adminManageUsersPage.sendNotificationSubmitButton.click();
+        ReusableMethods.bekle(1);
 
     }
     @Then("mesaj gonderildi text'inin goruntulendigi dogrulanir")

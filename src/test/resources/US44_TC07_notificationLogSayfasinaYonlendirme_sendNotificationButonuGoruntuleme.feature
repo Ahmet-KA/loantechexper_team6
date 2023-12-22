@@ -1,6 +1,6 @@
 
-Feature: notifications butonuna tiklandiginda notification log sayfasina yonlendirilmelidir.
-  sen do butonu aktif olmalidir
+Feature: Butona Tıklandığında notification-log sayfasina yönlendirmelidir.
+  (Bu baslıkta bir sayfa yok, send notification text'i  var.)
   Scenario: notification log sayfasina yonlendirme testi
     send notification butonu goruntuleme testi
 

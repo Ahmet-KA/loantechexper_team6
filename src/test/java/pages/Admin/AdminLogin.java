@@ -27,7 +27,13 @@ public class AdminLogin {
     public WebElement adminDashoardyazisi;
 
 
+    @FindBy(xpath = "(//input[@class='form-control'])[1]")
+    public WebElement usernameTextBoxg;
 
+    @FindBy (xpath = "(//input[@class='form-control'])[2]")
+    public WebElement passwordTextBoxg;
+    @FindBy (xpath = "//button[@type='submit']")
+    public WebElement adminLoginButtong;
 
 
     public void adminLoginGirisYap(String adminname,String adminPassword){

@@ -1,4 +1,4 @@
-Feature:  Send notification sayfasinda Submit Buton görünür olmal,
+Feature:  Send notification sayfasinda Submit Buton görünür olmali
   Scenario: Submit butonu goruntuleme testi
 
     Given Admin ana sayfayya gidilir

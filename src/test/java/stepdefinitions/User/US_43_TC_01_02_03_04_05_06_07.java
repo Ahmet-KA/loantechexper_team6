@@ -28,13 +28,19 @@ public class US_43_TC_01_02_03_04_05_06_07 {
     @Then("Gecerli {string} ve {string} girisi yapilir")
     public void gecerli_kullanici_adi_ve_sifre_girisi_yapilir(String userName, String AdminPassword) {
 
-       adminLogin.adminLoginGirisYap(userName,AdminPassword);
+        adminLogin.usernameTextBoxg.sendKeys(ConfigReader.getProperty(userName));
+        adminLogin.passwordTextBoxg.sendKeys(ConfigReader.getProperty(AdminPassword));
+
+
+        // adminLogin.adminLoginGirisYap(userName,AdminPassword);
 
     }
     @Then("Log in butonuna giris tikklanir")
     public void log_in_butonuna_giris_tikklanir() {
 
         // adminLogin.adminLoginButton.click();
+        adminLogin.adminLoginButtong.click();
+        ReusableMethods.bekle(1);
 
 
     }
@@ -45,6 +51,7 @@ public class US_43_TC_01_02_03_04_05_06_07 {
     }
     @Then("Active users link'ine tiklanir")
     public void active_users_link_ine_tiklanir() {
+
 
         adminManageUsersPage.activeUsersMenu.click();
 
