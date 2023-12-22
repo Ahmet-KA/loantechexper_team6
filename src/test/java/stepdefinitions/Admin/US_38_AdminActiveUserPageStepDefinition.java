@@ -19,6 +19,7 @@ public class US_38_AdminActiveUserPageStepDefinition {
 
     @Given("sol tarafta bulunan Manage Users menusune tiklar")
     public void sol_tarafta_bulunan_manage_users_menusune_tiklar() {
+        ReusableMethods.bekle(1);
         manageUsersPage.manageUserDropdownMenu.click();
         ReusableMethods.bekle(1);
     }
@@ -31,6 +32,7 @@ public class US_38_AdminActiveUserPageStepDefinition {
 
     @And("acilan menude Active Users basligina tiklar")
     public void acilanMenudeActiveUsersBasliginaTiklar() {
+        ReusableMethods.bekle(1);
         manageUsersPage.activeUsersTitle.click();
 
     }

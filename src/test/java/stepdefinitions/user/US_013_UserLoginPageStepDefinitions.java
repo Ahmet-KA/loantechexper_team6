@@ -2,19 +2,19 @@ package stepdefinitions.User;
 
 import io.cucumber.java.en.Given;
 import org.junit.Assert;
-import org.openqa.selenium.JavascriptExecutor;
 import pages.User.UserLoginPage;
 import pages.Visitor.VisitorHomePage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class US_013_UserLoginPageStep {
+public class US_013_UserLoginPageStepDefinitions {
 
     VisitorHomePage visitorHomePage = new VisitorHomePage();
     UserLoginPage userLoginPage = new UserLoginPage();
     @Given("Kayitli kullanici olarak {string} adresine gidilir.")
     public void kayitli_kullanici_olarak_adresine_gidilir(String string) {
+        ReusableMethods.bekle(1);
         Driver.getDriver().get(ConfigReader.getProperty("url"));
     }
     @Given("Anasayfada login button gorunurlugu ve aktifligi dogrulanır.")
@@ -40,6 +40,7 @@ public class US_013_UserLoginPageStep {
     @Given("Browser kapatilir.")
     public void browser_kapatilir() {
         Driver.quitDriver();
+        ReusableMethods.bekle(1);
     }
 
     @Given("Login button tiklanir ve Login form üzerinde username,password textbox,remember me checkbox,forgotpassword linki ve login button gorunur ve aktif olmalidir.")
@@ -93,7 +94,7 @@ public class US_013_UserLoginPageStep {
 
     @Given("Anasayfada login button tıklanır")
     public void anasayfada_login_button_tıklanır() {
-
+        ReusableMethods.bekle(1);
         visitorHomePage.loginButon.click();
     }
     @Given("Açılan login sayfasında kayıtlı {string} ve {string} girilir.")
@@ -127,6 +128,7 @@ public class US_013_UserLoginPageStep {
     @Given("These credentials do not match our records. uyarısının alındıgı doğrulanır")
     public void these_credentials_do_not_match_our_records_uyarısının_alındıgı_doğrulanır() {
 
+        ReusableMethods.bekle(1);
         Assert.assertTrue(userLoginPage.hataliLoginGirişUyarisi.isDisplayed());
     }
 
