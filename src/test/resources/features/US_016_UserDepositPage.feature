@@ -1,4 +1,4 @@
-@f16
+@US_016
 Feature: Kayitli bir kullanici (User ) olarak Mevduatlarimi gorebilmek ve islem yapabilmek istiyorum
 
   Background: Kayitli kullanici bilgileriyle login olur
@@ -47,7 +47,7 @@ Feature: Kayitli bir kullanici (User ) olarak Mevduatlarimi gorebilmek ve islem 
     * Kullanici Deposit Methods sayfasina gider
     * Select Gateway dropdown menusunden "Manual" secer
     * Amount textbox'ina "enterAmount" girer
-    * Submit butonuna tiklar
+    * Submit butonu tiklar
     * Uygun deger girildigini dogrular
     * Sayfayi kapatir
 
@@ -64,7 +64,7 @@ Feature: Kayitli bir kullanici (User ) olarak Mevduatlarimi gorebilmek ve islem 
     * Kullanici Deposit Methods sayfasina gider
     * Select Gateway dropdown menusunden "Manual" secer
     * Amount textbox'ina "enterAmount" girer
-    * Submit butonuna tiklar
+    * Submit butonu tiklar
     * 'You have requested 'enterAmount' USD , Please pay 'payable' USD for successful payment' yazisinin goruldugunu dogrular
     * Sayfayi kapatir
 
@@ -73,7 +73,7 @@ Feature: Kayitli bir kullanici (User ) olarak Mevduatlarimi gorebilmek ve islem 
     * Kullanici Deposit Methods sayfasina gider
     * Select Gateway dropdown menusunden "Manual" secer
     * Amount textbox'ina "enterAmount" girer
-    * Submit butonuna tiklar
+    * Submit butonu tiklar
     * PAY NOW butonuna tiklar
     * Deposit History sayfasina gecildigi dogrular
     * Sayfayi kapatir
@@ -83,7 +83,7 @@ Feature: Kayitli bir kullanici (User ) olarak Mevduatlarimi gorebilmek ve islem 
     * Kullanici Deposit Methods sayfasina gider
     * Select Gateway dropdown menusunden "Manual" secer
     * Amount textbox'ina "enterAmount" girer
-    * Submit butonuna tiklar
+    * Submit butonu tiklar
     * PAY NOW butonuna tiklar
     * islem tablosunda yapilan islemin goruntulendigi dogrular
     * You have deposit request has been taken, yazisini gordugunu dogrular
@@ -94,7 +94,7 @@ Feature: Kayitli bir kullanici (User ) olarak Mevduatlarimi gorebilmek ve islem 
     * Kullanici Deposit Methods sayfasina gider
     * Select Gateway dropdown menusunden "Manual" secer
     * Amount textbox'ina "enterAmount" girer
-    * Submit butonuna tiklar
+    * Submit butonu tiklar
     * PAY NOW butonuna tiklar
     * Deposit Now butonuna tiklar
     * Deposit Methods sayfasina gecildigini dogrular

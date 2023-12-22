@@ -67,7 +67,7 @@ public class US_007_VisitorLoanPlansSteps {
 
     @Given("Loan Plan kartlarinin gorunur oldugunu dogrular") // TC_04
     public void loan_plan_kartlarinin_gorunur_oldugunu_dogrular() {
-        goruneneKadarKaydir(visitorLoanPage.installmentElement);
+        goruneneKadarKaydir(visitorLoanPage.basicLoanPlanCardBodyElement);
         bekle(1);
         assertTrue(visitorLoanPage.basicLoanPlanCardBodyElement.isDisplayed());
     }

@@ -25,7 +25,6 @@ Feature: [US_007] Bir ziyaretci olarak Loan Planlara ulasabilecegim ve secebilec
   Scenario: [TC_04 > US_007] Basic Loan basligi altindaki Loan Plan kartlarinin gorunur oldugunu dogrular
     * Plans menusune tiklar
     * Basic Loan butonuna tiklar
-    * Cookiesi kapatir
     * Loan Plan kartlarinin gorunur oldugunu dogrular
     * Sayfayi kapatir
 
