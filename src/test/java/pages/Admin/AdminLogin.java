@@ -39,4 +39,21 @@ public class AdminLogin {
     }
 
 
+
+
+
+
+
+
+
+
+    @FindBy(xpath = "(//input[@class='form-control'])[1]")
+    public WebElement usernameTextBoxHT;
+    @FindBy (xpath = "(//input[@class='form-control'])[2]")
+    public WebElement passwordTextBoxHT;
+
+    @FindBy (xpath = "//button[@type='submit']")
+    public WebElement adminLoginButtonHT;
+
+
 }

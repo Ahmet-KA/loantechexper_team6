@@ -186,4 +186,53 @@ public class AdminManageUsersPage {
 
 
 
+
+
+
+
+
+
+    @FindBy(xpath = "//*[@id=\"sidebar__menuWrapper\"]/ul/li[2]/a")
+    public WebElement manageUsersButton;
+
+    @FindBy(xpath = "//*[@id=\"sidebar__menuWrapper\"]/ul/li[2]/div/ul/li[9]/a")
+    public WebElement notificationToAllButton;
+
+    @FindBy(xpath = "//*[@id=\"being_sent_to\"]")
+    public WebElement beingSentCheckbox;
+
+    @FindBy(xpath = "//*[@id=\"subject\"]")
+    public WebElement subjectTextbox;
+
+    @FindBy(xpath = "//*[@id=\"user_list_wrapper\"]/span/span[1]/span")
+    public WebElement selectUserTextbox;
+
+    @FindBy(xpath = "/html/body/div/div[2]/div/div[2]/div/div/form/div[1]/div/div[3]/div/div[2]/div")
+    public WebElement notificationMessageTextbox;
+
+    @FindBy(xpath = "//*[@id=\"batch\"]")
+    public WebElement pertBatchTextbox;
+
+    @FindBy(xpath = "//*[@id=\"cooling_time\"]")
+    public WebElement coolingPeriodTextbox;
+
+    @FindBy(xpath = "//button[@class=\"btn w-100 h-45 btn--primary me-2\"]")
+    public WebElement notificationSubmitButton;
+
+    @FindBy(xpath = "//*[@id=\"notificationSending\"]/div/div/div[2]/div[2]/div")
+    public WebElement doneMessage;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

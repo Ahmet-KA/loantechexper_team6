@@ -194,4 +194,80 @@ public static void butonGorunurlukVeAktiflikTesti(WebElement buttonElement){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+    @FindBy(xpath = "//*[@id=\"sidebar__menuWrapper\"]/ul/li[8]/a")
+    public WebElement withdrawalsButton;
+
+    @FindBy(xpath = "//*[@id=\"sidebar__menuWrapper\"]/ul/li[8]/div/ul/li[1]/a/span")
+    public WebElement withdrawalsMethodButton;
+
+    @FindBy(xpath = "//div[@class=\"col-lg-12\"]")
+    public WebElement withdrawalsMethod;
+
+    @FindBy(xpath = "/html/body/div/div[2]/div/div[2]/div/div/div/div/table/tbody/tr[3]/td[6]/div/a")
+    public WebElement withdrawalsMethodEditButton;
+
+    @FindBy(xpath = "//h6[@class=\"page-title\"]")
+    public WebElement updateWithdrawalMethodText;
+
+    @FindBy(xpath = "//*[@id=\"min_limit\"]")
+    public WebElement withdrawalMethodMinimumAmount;
+
+    @FindBy(xpath = "//*[@id=\"max_limit\"]")
+    public WebElement withdrawalMethodMaximumAmount;
+
+    @FindBy(xpath = "//button[@class=\"btn btn--primary w-100 h-45\"]")
+    public WebElement withdrawalMethodSubmitButton;
+
+    @FindBy(xpath = "/html/body/div/div[2]/div/div[2]/div/div/div/div/table/tbody/tr[3]/td[5]/span")
+    public WebElement enabledButton;
+
+    @FindBy(xpath = "/html/body/div/div[2]/div/div[1]/div/a")
+    public WebElement addNewButton;
+
+    @FindBy(xpath = "//*[@id=\"name\"]")
+    public WebElement nameText;
+
+    @FindBy(xpath = "//*[@id=\"currency\"]")
+    public WebElement currencyText;
+
+    @FindBy(xpath = "//*[@id=\"rate\"]")
+    public WebElement rateText;
+
+    @FindBy(xpath = "//*[@id=\"min_limit\"]")
+    public WebElement minLimitText;
+
+    @FindBy(xpath = "//*[@id=\"max_limit\"]")
+    public WebElement maxLimitText;
+
+    @FindBy(xpath = "//*[@id=\"fixed_charge\"]")
+    public WebElement fixedChargeText;
+
+    @FindBy(xpath = "//*[@id=\"percent_charge\"]")
+    public WebElement percentChargeText;
+
+    @FindBy(xpath = "/html/body/div/div[2]/div/div[2]/div/div/form/div[1]/div/div/div[3]/div[3]/div/div/div/div[2]/div")
+    public WebElement withdrawInstructionText;
+
+    @FindBy(xpath = "/html/body/div/div[2]/div/div[2]/div/div/form/div[2]/button")
+    public WebElement methodsSubmitButton;
+
+    @FindBy(xpath = "//*[@id=\"V2l0aGRyYXclMjBtZXRob2QlMjBhZGRlZCUyMHN1Y2Nlc3NmdWxseWdyZWVu\"]/div[1]/div[1]/p")
+    public WebElement withdrawMethodAddedSuccessfullyMessage;
+
+
+
+
+
+
 }

@@ -37,4 +37,30 @@ public class UserDashboardPage {
     public WebElement dashboardLoginElement;
 
 
+
+
+
+
+
+
+
+
+
+    @FindBy(xpath = "/html/body/div[3]/div/div[1]/a/img")
+    public WebElement loanTechExperImage;
+
+    @FindBy(xpath = "//h5[@class='card-title']")
+    public WebElement applicationformText;
+
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement applyButonuDashboard;
+
+    @FindBy(xpath = "//*[@id=\"TG9hbiUyMGFwcGxpY2F0aW9uJTIwc3VibWl0dGVkJTIwc3VjY2Vzc2Z1bGx5Z3JlZW4\"]/div[1]/div[1]/p")
+    public WebElement loanApplicationSubmittedSuccessfullyMessage;
+
+
+
+
+
+
 }

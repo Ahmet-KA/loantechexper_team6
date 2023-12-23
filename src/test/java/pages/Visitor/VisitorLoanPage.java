@@ -27,4 +27,59 @@ public class VisitorLoanPage {
     public  WebElement applyNowAktiveXElement; //you are not looed in! sayfasındaki X
     @FindBy(xpath = "(//span[text()=\"Per Installment\"])[5]")
     public  WebElement installmentElement;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @FindBy (xpath = "//*[@id=\"pills-standart-loan-tab\"]")
+    public WebElement standartLoanButton;
+
+    @FindBy (xpath = "//*[@id=\"pills-basic-loan-tab\"]")
+    public WebElement basicLoanButton;
+
+    @FindBy (xpath = "//*[@id=\"pills-car-loan-2-tab\"]")
+    public WebElement carLoanButton;
+
+    @FindBy (xpath = "//*[@id=\"pills-basic-loan\"]/div/div[4]/div/div[1]/div[1]/div[1]/h4")
+    public WebElement basicLoanText;
+
+    @FindBy (xpath = "//*[@id=\"pills-basic-loan\"]/div/div[5]/div/div[1]/div[1]/div[1]/h4")
+    public WebElement carLoanText;
+
+    @FindBy (xpath = "//*[@id=\"pills-basic-loan\"]/div/div[6]/div/div[1]/div[1]/div[1]/h4")
+    public WebElement testLoanText;
+
+    @FindBy (xpath = "//*[@id=\"pills-basic-loan\"]/div/div[4]/div/div[2]/button")
+    public WebElement applyNowButton;
+
+    @FindBy (xpath = "//*[@id=\"exampleModalLabel\"]")
+    public WebElement applyForText;
+
+    @FindBy (xpath = "//*[@id=\"loanModal\"]/div/div/form/div[2]/div/div/input")
+    public WebElement amountTextbox;
+
+    @FindBy (xpath = "//*[@id=\"loanModal\"]/div/div/form/div[2]/button")
+    public WebElement confirmButton;
+
+
+
+
+
+
 }
