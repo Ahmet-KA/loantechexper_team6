@@ -19,12 +19,13 @@ public class VisitorLoanPage {
     public  WebElement basicLoanButtonElement;
     @FindBy(xpath = "//*[@id=\"pills-basic-loan\"]/div/div[2]/div/div[2]/button")
     public  WebElement basicLoanApplyNowButtonElement;
-    @FindBy(xpath = "(//ul[@class=\"plan-feature-list\"])[5]")
+    @FindBy(xpath = "(//ul[@class=\"plan-feature-list\"])[7]")
     public  WebElement basicLoanPlanCardBodyElement;
     @FindBy(xpath = "//button[@aria-label=\"Close\"]")
     public  WebElement notLoggedCloseElement; //you are not looed in! sayfasındaki close
     @FindBy(xpath = "//i[@aria-hidden=\"true\"]")
     public  WebElement applyNowAktiveXElement; //you are not looed in! sayfasındaki X
+
     @FindBy(xpath = "(//span[text()=\"Per Installment\"])[5]")
     public  WebElement installmentElement;
 
@@ -76,6 +77,7 @@ public class VisitorLoanPage {
 
     @FindBy (xpath = "//*[@id=\"loanModal\"]/div/div/form/div[2]/button")
     public WebElement confirmButton;
+
 
 
 

@@ -150,7 +150,7 @@ public class AdminWithdrawalsPage {
     @FindBy(xpath = "(//textarea[@name='details'])[2]")
     public WebElement reasonOfRejectionTextBox;
     @FindBy(xpath = "(//button[@type='submit'])[2]")
-    public WebElement reaasonSubmitButton;
+    public WebElement reasonSubmitButton;
     @FindBy(xpath = "//p[@class='iziToast-message slideIn']")
     public WebElement confirmationAlertBox;
     @FindBy(xpath = "(//span[@class='badge badge--danger'])[1]")
@@ -192,6 +192,11 @@ public static void butonGorunurlukVeAktiflikTesti(WebElement buttonElement){
 
 
 
+
+    @FindBy(xpath = "//div[@class='col-lg-12']")
+    public WebElement withdrawTable;
+    @FindBy(xpath = "(//span[@class='fw-bold'])[2]")
+    public WebElement transactionNumberText;
 
 
 
@@ -269,5 +274,14 @@ public static void butonGorunurlukVeAktiflikTesti(WebElement buttonElement){
 
 
 
+
+
+    @FindBy(xpath  = "(//textarea[@name='details'])[1]")
+    public WebElement reasonOfApproveTextBox;
+
+    @FindBy(xpath ="(//button[@type='submit'])[1]")
+    public WebElement reasonApproveSubmitButton;
+    @FindBy(xpath = "//span[text()=\"Pending\"]")
+    public WebElement statusPendingElementi;
 
 }

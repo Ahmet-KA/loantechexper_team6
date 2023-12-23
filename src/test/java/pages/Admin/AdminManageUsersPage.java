@@ -68,7 +68,8 @@ public class AdminManageUsersPage {
     @FindBy (xpath = "//button[@class='btn w-100 h-45 btn--primary']")
     public WebElement sendNotificationSubmitButton;
 
-    @FindBy (xpath = "//*[@style='padding-left: 33px;']")
+
+    @FindBy (xpath = "//*[text()='Notification sent successfully']")
     public WebElement mesajgonderilditexti;
 
 

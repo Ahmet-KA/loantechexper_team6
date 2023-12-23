@@ -67,6 +67,20 @@ public class AdminDepositsPage {
     public WebElement dateSearchButton;
     @FindBy (xpath = "//tbody//tr")
     public List<WebElement> successdepositList;
+    @FindBy (xpath = "//h6[@class='page-title']")
+    public WebElement pendingDepositsYazisi;
+    @FindBy (xpath = "//div[@class='bodywrapper__inner']")
+    public WebElement pendingDepositsListesi;
+    @FindBy (xpath = "(//a[@class='btn btn-sm btn-outline--primary ms-1'])[5]")
+    public WebElement pendingDepositDetailsButton;
+    @FindBy (xpath = "(//div[@class='modal-body'])[2]")
+    public WebElement approveUyariMesaji;
+
+
+
+
+
+
 
 
 
@@ -99,7 +113,10 @@ public class AdminDepositsPage {
     public WebElement statusBaslik;
     @FindBy (xpath = "//th[text()='Action']")
     public WebElement actionBaslik;
-    @FindBy(xpath = "//a[@*='https://qa.loantechexper.com/admin/deposit/details/112']")
+
+    //@FindBy(xpath = "//a[@*='https://qa.loantechexper.com/admin/deposit/details/52']")
+
+    @FindBy(xpath = "//a[@*='btn btn-sm btn-outline--primary ms-1']")
     public WebElement detailsButon;
 
     @FindBy(xpath = "//span[text()='All Deposits']")
@@ -133,6 +150,7 @@ public class AdminDepositsPage {
     public WebElement approveButton;
     @FindBy (xpath = "//*[@class='btn btn-outline--danger btn-sm ms-1 rejectBtn']")
     public WebElement rejectButton;
+
 
 
 
@@ -244,6 +262,8 @@ public class AdminDepositsPage {
     public WebElement approveSuccessText;
     @FindBy (xpath = "//tbody//tr")
     public List<WebElement> userDepositHistoryList;
+    @FindBy(xpath = "(//*[text()='Pending Deposits'])[1]")
+    public WebElement pendingDepositslink;
 
 
 

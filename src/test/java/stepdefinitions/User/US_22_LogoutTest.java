@@ -18,7 +18,7 @@ public class US_22_LogoutTest {
 
     @Given("Kullanici loantechUrl anasayfasina gider")
     public void kullanici_loantech_url_anasayfasina_gider() {
-        Driver.getDriver().get(ConfigReader.getProperty("loantechUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("url"));
         ReusableMethods.bekle(2);
     }
     @Given("Kullanici login butonuna tiklar")
@@ -28,9 +28,12 @@ public class US_22_LogoutTest {
     }
     @Given("username ve password bilgilerini girer")
     public void username_ve_password_bilgilerini_girer() {
-        userLoginPage.userNameTextBox.sendKeys("mertkan");
-        userLoginPage.userPasswordTextBox.sendKeys("Loan.741");
-        userLoginPage.loginButton.click();
+        userLoginPage.scrolling(userLoginPage.welcomeText);
+        ReusableMethods.bekle(1);
+        userLoginPage.userNameTextBox.sendKeys(ConfigReader.getProperty("userNameMrt"));
+        userLoginPage.userPasswordTextBox.sendKeys(ConfigReader.getProperty("userPassword"));
+        ReusableMethods.bekle(1);
+        ReusableMethods.clickWithJS(userLoginPage.loginButton);
 
 
     }
